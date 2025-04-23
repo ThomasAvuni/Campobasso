@@ -19,8 +19,6 @@
 *.tar.gz
 *.rar
 
-bin/
-
 .vscode/
 *.vscode/
 
