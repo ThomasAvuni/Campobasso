@@ -1,0 +1,19 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+
+public class App extends Application {
+    public static void main(String[] args) throws Exception {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
+        stage.setTitle("Hello World");
+        stage.setScene(new Scene(loader.load(), 800, 600));
+        stage.show();
+        
+    }
+}

@@ -1,0 +1,61 @@
+import java.util.Random;
+
+public class Cliente{
+    private String nome, cognome;
+    private Prenotazione prenotazione;
+    private Tavolo tavolo;
+    private Random random;
+
+    public Cliente(String nome, String cognome, Data dataPrenotazione) {
+        this.nome = nome;
+        this.cognome = cognome;
+        prenotazione = Prenotazione.creaPrenotazione(dataPrenotazione, this.nome, this.cognome);
+        if(prenotazione != null){
+            Azienda.gestionePrenotazioni.aggiungiPrenotazione(prenotazione);
+            prenotazione.setCliente(this);
+            random = new Random();
+            this.AssegnaTavolo();
+        }
+        else{
+            tavolo = new Tavolo(0, 0);
+        }
+ 
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public Tavolo getTavolo() {
+        return tavolo;
+    }
+
+    public Prenotazione getPrenotazione() {
+        return prenotazione;
+    }
+
+    public void AssegnaTavolo(){
+        if(Sala.getTavoliDisponibili().size() > 0){
+            int i = random.nextInt(Sala.getTavoliDisponibili().size());
+            tavolo = Sala.getTavoliDisponibili().elementAt(i);
+            Sala.getTavoliDisponibili().elementAt(i).setOccupato(true);
+        }
+        else{
+            tavolo = new Tavolo(0, 0);
+            Sala.piena = true;
+            System.out.println("Tutti i tavoli sono pieni");
+        }
+    }
+}
