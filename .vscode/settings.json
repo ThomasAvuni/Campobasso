@@ -5,13 +5,13 @@
 	"java.project.outputPath": "bin",
 	"java.project.referencedLibraries": [
 		"lib/**/*.jar",
-		"Z:/JAVAFX/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.base.jar",
-		"Z:/JAVAFX/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.controls.jar",
-		"Z:/JAVAFX/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.fxml.jar",
-		"Z:/JAVAFX/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.graphics.jar",
-		"Z:/JAVAFX/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.media.jar",
-		"Z:/JAVAFX/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.swing.jar",
-		"Z:/JAVAFX/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.web.jar",
-		"Z:/JAVAFX/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx-swt.ja"
+		"c:/Users/utente/Downloads/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.base.jar",
+		"c:/Users/utente/Downloads/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.controls.jar",
+		"c:/Users/utente/Downloads/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.fxml.jar",
+		"c:/Users/utente/Downloads/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.graphics.jar",
+		"c:/Users/utente/Downloads/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.media.jar",
+		"c:/Users/utente/Downloads/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.swing.jar",
+		"c:/Users/utente/Downloads/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx.web.jar",
+		"c:/Users/utente/Downloads/openjfx-24.0.1_windows-x64_bin-sdk/javafx-sdk-24.0.1/lib/javafx-swt.ja"
 	]
 }
