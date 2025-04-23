@@ -19,7 +19,7 @@
 *.tar.gz
 *.rar
 
-.bin/
+bin/
 
 .vscode/
 *.vscode/
