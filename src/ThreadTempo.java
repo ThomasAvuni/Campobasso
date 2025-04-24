@@ -50,6 +50,7 @@ public class ThreadTempo extends Thread{
                 ora = new Ora(19, 00, 00);
                 data.setGiorno(data.getGiorno() + 1);
                 ms = 0;
+                Azienda.getDirettore().pagaStipendi();
                 continue;
             }
 
@@ -61,7 +62,7 @@ public class ThreadTempo extends Thread{
 
             //Fermare il thread 
             try {
-                Thread.sleep(5);
+                Thread.sleep(1);
             } catch (InterruptedException e) {
 
             }
