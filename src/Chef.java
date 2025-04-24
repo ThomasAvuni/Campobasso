@@ -1,8 +1,9 @@
-
+import java.util.Vector; 
 
 public class Chef extends Dipendente{
     private Cibo cibo;
     private Piatto piattoPronto;
+    Vector vect;
     public Chef(String nome, String cognome, Data dataNascita) {
         super(nome, cognome, dataNascita);
         this.ruolo = "Chef";
@@ -10,6 +11,7 @@ public class Chef extends Dipendente{
     
     // cucina
     public void cucina(){
+        vect = new Vector();
         if(cibo.getNome().toLowerCase().contains("pasta".toLowerCase())){
             if(cibo.getNome().toLowerCase().contains("zucchine".toLowerCase())){
                 piattoPronto = new Piatto("Pasta e zucchine");
@@ -29,8 +31,10 @@ public class Chef extends Dipendente{
         }
     }
 
-    public void setCibo(Cibo cibo) {
-        this.cibo = cibo;
+    public void AddCiboInCoda (Cibo cibo) {
+        do {
+            vect.addElement(this.cibo);
+        } while (cibo.getQuantita() > 0);
     }
 
     @Override
