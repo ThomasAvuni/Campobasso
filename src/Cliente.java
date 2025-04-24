@@ -6,15 +6,13 @@ public class Cliente{
     private Tavolo tavolo;
     private Random random;
 
-    public Cliente(String nome, String cognome, Data dataPrenotazione) {
+    public Cliente(String nome, String cognome, Ora oraPrenotazione) {
         this.nome = nome;
         this.cognome = cognome;
-        prenotazione = Prenotazione.creaPrenotazione(dataPrenotazione, this.nome, this.cognome);
+        prenotazione = Prenotazione.creaPrenotazione(oraPrenotazione, this.nome, this.cognome);
         if(prenotazione != null){
-            Azienda.gestionePrenotazioni.aggiungiPrenotazione(prenotazione);
             prenotazione.setCliente(this);
-            random = new Random();
-            this.AssegnaTavolo();
+            Azienda.clienti.addElement(this);
         }
         else{
             tavolo = new Tavolo(0, 0);

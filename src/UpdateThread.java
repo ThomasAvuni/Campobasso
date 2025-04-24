@@ -1,9 +1,9 @@
 import javafx.application.Platform;
 public class UpdateThread extends Thread{
 
-    private MainController controller;
+    private RistoranteController controller;
 
-    public UpdateThread(MainController c) {
+    public UpdateThread(RistoranteController c) {
         controller = c;
     }
 

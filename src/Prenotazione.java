@@ -1,29 +1,29 @@
 public class Prenotazione {
     //Attributi
-    private Data dataAppuntamento;
+    private Ora oraAppuntamento;
     private String nome, cognome;
     Cliente cliente;
     
 
     //Costruttore
-    private Prenotazione(Data data, String nome, String cognome){
-        this.dataAppuntamento = data;
+    private Prenotazione(Ora data, String nome, String cognome){
+        this.oraAppuntamento = data;
         this.nome = nome;
         this.cognome = cognome;
     }
 
-    public static Prenotazione creaPrenotazione(Data data, String nome, String cognome){
-        if(data.getOrario().isBefore(ThreadTempo.ORARIO_APERTURA)){
+    public static Prenotazione creaPrenotazione(Ora ora, String nome, String cognome){
+        if(ora.isBefore(ThreadTempo.ORARIO_APERTURA)){
             System.out.println("La prenotazione di " + nome + " " + cognome + " non e' valida!");
             return null;
         }
 
-        return new Prenotazione(data, nome, cognome);
+        return new Prenotazione(ora, nome, cognome);
     }
 
     //Getter
-    public Data getDataAppuntamento() {
-        return dataAppuntamento;
+    public Ora getOraAppuntamento() {
+        return oraAppuntamento;
     }
 
     public String getNome() {
@@ -39,7 +39,7 @@ public class Prenotazione {
     }
 
     public boolean isEqual(Prenotazione p){
-        if(this.getNome().equals(p.getNome()) && this.getCognome().equals(p.getCognome()) && this.getDataAppuntamento().equals(p.getDataAppuntamento())){
+        if(this.getNome().equals(p.getNome()) && this.getCognome().equals(p.getCognome()) && this.getOraAppuntamento().equals(p.getOraAppuntamento())){
             return true;
         }
         return false;
@@ -58,26 +58,15 @@ public class Prenotazione {
             return false;
         }
 
-        Data data = this.getDataAppuntamento();
-        Data altraData = a.getDataAppuntamento();
-
-        if (data.getAnno() < altraData.getAnno() || 
-            (data.getAnno() == altraData.getAnno() && data.getMese() < altraData.getMese()) || 
-            (data.getAnno() == altraData.getAnno() && data.getMese() == altraData.getMese() && data.getGiorno() < altraData.getGiorno()) || 
-            (data.getAnno() == altraData.getAnno() && data.getMese() == altraData.getMese() && data.getGiorno() == altraData.getGiorno() && (data != null && data.getOrario().isBefore(altraData.getOrario())))) 
-        {
-            return true;
-        }
-
-        return false;
+        return this.getOraAppuntamento().isBefore(a.getOraAppuntamento());
     }
 
     @Override
     public String toString() {
-        if(dataAppuntamento.getOrario() != null)
-            return "(" + getNome() + " " + getCognome() + ", " + getDataAppuntamento().toString() +")";
+        if(getOraAppuntamento() != null)
+            return "(" + getNome() + " " + getCognome() + ", " + getOraAppuntamento().toString() +")";
 
-        return "(" + getNome() + " " + getCognome() + ", " + getDataAppuntamento().toString() + ")";
+        return "(" + getNome() + " " + getCognome() + ", " + getOraAppuntamento().toString() + ")";
     }
 
 }

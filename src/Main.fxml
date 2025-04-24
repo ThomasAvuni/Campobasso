@@ -2,11 +2,37 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
    <children>
-      <Label fx:id="timeLabel" layoutX="923.0" layoutY="21.0" text="[19:00]" textFill="WHITE" />
-      <Button fx:id="btnInizia" layoutX="849.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#onIniziaClicked" text="Inzia servizio" />
+      <Pane fx:id="panAggPrenotazione" layoutX="20.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
+         <children>
+            <Button layoutX="82.0" layoutY="257.0" mnemonicParsing="false" onMouseClicked="#onAggPrenotazioneClicked" text="Aggiungi prenotazione" />
+            <TextField fx:id="tfNome" layoutX="100.0" layoutY="82.0" prefWidth="180.0" promptText="Nome" />
+            <TextField fx:id="tfCongome" layoutX="99.0" layoutY="136.0" prefHeight="26.0" prefWidth="180.0" promptText="Cognome" />
+            <TextField fx:id="tfOra" layoutX="100.0" layoutY="189.0" prefHeight="26.0" prefWidth="180.0" promptText="Ora" />
+            <Label layoutX="-1.0" layoutY="14.0" prefHeight="23.0" prefWidth="380.0" styleClass="titoli" text="Inserisci la prenotazione">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnInizia" layoutX="114.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#onIniziaClicked" text="Inzia servizio" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneClienti" layoutX="412.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
+         <children>
+            <VBox fx:id="listaClienti" layoutX="8.0" layoutY="43.0" prefHeight="300.0" prefWidth="364.0" />
+            <Label layoutY="14.0" prefHeight="23.0" prefWidth="380.0" styleClass="titoli" text="Lista delle prenotazioni">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -47,8 +47,6 @@ public class ThreadTempo extends Thread{
 
             if(ora.ora >= 23){
                 System.out.println("Nuova giornata");
-                Azienda.getAiutoCuoco().lavaPiatti();
-                Azienda.getDirettore().pagaStipendi();
                 ora = new Ora(19, 00, 00);
                 data.setGiorno(data.getGiorno() + 1);
                 ms = 0;
@@ -59,7 +57,6 @@ public class ThreadTempo extends Thread{
                 System.out.println("Nuovo mese");
                 data.setMese(data.getMese() + 1);
                 data.setGiorno(1);
-                Azienda.getDirettore().pagaStipendi();
             }
 
             //Fermare il thread 
