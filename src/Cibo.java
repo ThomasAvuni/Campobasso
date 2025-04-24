@@ -4,6 +4,7 @@ public class Cibo {
 
     public Cibo(String nome){
         this.nome = nome;
+        this.quantita = 1;
     }
 
     public Cibo(String nome, int quantita){

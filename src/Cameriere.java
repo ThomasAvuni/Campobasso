@@ -1,7 +1,11 @@
+import java.util.Vector;
+
 public class Cameriere extends Dipendente {
+    Vector vect;
     private Tavolo tavolo; 
     public Cameriere(String nome, String cognome, Data dataNascita) {
         super(nome, cognome, dataNascita);
+        vect = new Vector();
         this.ruolo = "Cameriere";
     }
 
@@ -12,9 +16,11 @@ public class Cameriere extends Dipendente {
 
     public void prendiOrdine(Cliente cliente, Cibo cibo) {
         this.tavolo = cliente.getTavolo();
-        Azienda.getChef().setCibo(cibo);
+        Azienda.getChef().AddCiboInCoda(cibo);
         Azienda.getChef().cucina();
     }
+
+    
 
     public void portaPiatto() {
         if(Azienda.getChef().getPiattoPronto() != null){
@@ -23,4 +29,6 @@ public class Cameriere extends Dipendente {
             AiutoCuoco.piattiDaLavare.addElement(Azienda.getChef().getPiattoPronto());
         }
     }
+
+    
 }
