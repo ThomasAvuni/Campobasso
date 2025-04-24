@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -19,5 +21,32 @@
          </children>
       </Pane>
       <Label fx:id="timeLabel" layoutX="904.0" layoutY="24.0" prefHeight="23.0" prefWidth="116.0" text="[19:00]" />
+      <Pane fx:id="paneMenu" layoutX="520.0" layoutY="384.0" prefHeight="350.0" prefWidth="380.0">
+         <children>
+            <VBox fx:id="listaClienti1" layoutX="8.0" layoutY="43.0" prefHeight="300.0" prefWidth="364.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="365.0" text="Pasta e zucchine            12€" />
+                  <Label prefHeight="19.0" prefWidth="365.0" text="Pasta al pomodoro           10€" />
+                  <Label prefHeight="19.0" prefWidth="365.0" text="Carne alla griglia          15€" />
+               </children>
+            </VBox>
+            <Label layoutY="14.0" prefHeight="23.0" prefWidth="380.0" styleClass="titoli" text="Menu">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="paneOrdinazione" layoutX="20.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0" visible="false">
+         <children>
+            <Label fx:id="lbTitoloOrdinazione" layoutY="14.0" prefHeight="23.0" prefWidth="380.0" styleClass="titoli" text="Cosa vuoi ordinare?">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfOrdinazione" layoutX="74.0" layoutY="48.0" prefHeight="40.0" prefWidth="233.0" promptText="Scegli dal menu!" />
+            <Button fx:id="btnOrdina" layoutX="102.0" layoutY="267.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="176.0" text="Ordina" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

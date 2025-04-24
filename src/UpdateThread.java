@@ -17,6 +17,11 @@ public class UpdateThread extends Thread{
                     @Override
                     public void run() {
                         controller.setTempo(ThreadTempo.getTempo());
+                        if(Azienda.gestionePrenotazioni.getUltimaPrenotazione() == null)
+                            return;
+                        if(ThreadTempo.getOra().isEqual(Azienda.gestionePrenotazioni.getUltimaPrenotazione().getOraAppuntamento())){
+                            controller.setPannelloOrdinazione();
+                        }
                     }
                 });
             } catch (InterruptedException e) {

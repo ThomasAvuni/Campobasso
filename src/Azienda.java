@@ -1,7 +1,7 @@
 import java.util.Vector;
 
 public class Azienda {
-    static GestionePrenotazioni gestionePrenotazioni = new GestionePrenotazioni();
+    public static GestionePrenotazioni gestionePrenotazioni = new GestionePrenotazioni();
     private static Direttore direttore = new Direttore("Vincenzo", "Siciliano");
     private static Chef chef = new Chef("Gianmarco", "Tocco", new Data(1998, 12, 3));
     private static AiutoCuoco aiutoCuoco = new AiutoCuoco("Francesco", "Marzano", new Data(1990, 5, 20));

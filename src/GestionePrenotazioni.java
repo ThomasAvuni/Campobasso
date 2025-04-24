@@ -21,6 +21,17 @@ public class GestionePrenotazioni {
         return prenotazioni;
     }
 
+    public Prenotazione getUltimaPrenotazione() {
+        if (head == null) {
+            return null;
+        }
+        Node p = head;
+        while (p.getLink() != null) {
+            p = p.getLink();
+        }
+        return p.getDati();
+    }
+
     public void inserisciInTesta(Prenotazione p){
         Node n = new Node(p);
         n.setLink(head);

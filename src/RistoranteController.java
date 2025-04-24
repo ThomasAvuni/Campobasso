@@ -1,13 +1,25 @@
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class RistoranteController {
-        @FXML Label timeLabel;
-        @FXML private VBox listaClienti;
+    @FXML Label timeLabel;
+    @FXML private VBox listaClienti;
+    @FXML private TextField tfOrdinazione;
+    @FXML private Button btnOrdina;
+    @FXML private Label lbTitoloOrdinazione;
+    @FXML private Pane paneOrdinazione;
 
     public void setTempo(String tempo) {
         timeLabel.setText(tempo);
+    }
+
+    public void setPannelloOrdinazione() {
+        paneOrdinazione.setVisible(true);
     }
 
     public void inizia(){
@@ -20,6 +32,17 @@ public class RistoranteController {
             Label label = new Label(c.getNome() + " " + c.getCognome() + " " + c.getPrenotazione().getOraAppuntamento().toString());
             listaClienti.getChildren().add(label);
         }
+    }
+
+    public void ordina(MouseEvent e){
+        if(tfOrdinazione.getText().isEmpty()){
+            return;
+        }
+
+
+
+        String ordinazione = tfOrdinazione.getText();
+
     }
 
 }
