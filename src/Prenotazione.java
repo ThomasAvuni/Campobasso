@@ -10,6 +10,7 @@ public class Prenotazione {
         this.oraAppuntamento = data;
         this.nome = nome;
         this.cognome = cognome;
+        this.oraAppuntamento = data;
     }
 
     public static Prenotazione creaPrenotazione(Ora ora, String nome, String cognome){
