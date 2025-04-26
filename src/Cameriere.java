@@ -1,11 +1,11 @@
 import java.util.Vector;
 
 public class Cameriere extends Dipendente {
-    Vector piattiPronti;
+    Vector<Piatto> piattiPronti;
     private Tavolo tavolo; 
     public Cameriere(String nome, String cognome, Data dataNascita) {
         super(nome, cognome, dataNascita);
-        piattiPronti = new Vector();
+        piattiPronti = new Vector<Piatto>();
         this.ruolo = "Cameriere";
     }
 
@@ -21,16 +21,14 @@ public class Cameriere extends Dipendente {
     }
 
     public void AddPiattoPronto (Piatto piatto) {
-    piattiPronti.addElement(piatto);
+        piattiPronti.addElement(piatto);
     }
 
     public void portaPiatto() {
-        if(Azienda.getChef().getPiattoPronto() != null){
-            System.out.println("Porto il piatto " + Azienda.getChef().getPiattoPronto().getNome() + " al tavolo " + tavolo.getNumero());
-            Azienda.getChef().getPiattoPronto().setLavato("sporco");
-            AiutoCuoco.piattiDaLavare.addElement(Azienda.getChef().getPiattoPronto());
-        }
+        // if(Azienda.getChef().getPiattoPronto() != null){
+        //     System.out.println("Porto il piatto " + Azienda.getChef().getPiattoPronto().getNome() + " al tavolo " + tavolo.getNumero());
+        //     Azienda.getChef().getPiattoPronto().setLavato("sporco");
+        //     AiutoCuoco.piattiDaLavare.addElement(Azienda.getChef().getPiattoPronto());
+        // }
     }
-
-    
 }
