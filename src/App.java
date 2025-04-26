@@ -14,6 +14,7 @@ public class App extends Application {
         stage.setTitle("Ristorante");
         stage.setScene(new Scene(loader.load(), 1024, 768));
         stage.show();
-        
+        Azienda a = new Azienda();
+        a.inizia();
     }
 }

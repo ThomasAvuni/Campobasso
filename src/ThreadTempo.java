@@ -1,8 +1,8 @@
 public class ThreadTempo extends Thread{
     //Attrubuti della classe
     private int ms;
-    private static Ora ora;
-    private static Data data;
+    private Ora ora;
+    private Data data;
     public static final Ora ORARIO_APERTURA = new Ora(19, 00, 00);
 
     public ThreadTempo() {
@@ -11,12 +11,13 @@ public class ThreadTempo extends Thread{
         data = new Data(1, 1, 2025);
     }
 
+
     //Getter
-    public static Ora getOra(){
+    public Ora getOra(){
         return ora;
     }
  
-    public static String getTempo() {
+    public String getTempo() {
         return "[" + getOra().ora + ":" + getOra().minuti + ":" + getOra().secondi + "]";
     }
 
