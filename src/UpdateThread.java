@@ -2,7 +2,6 @@ import javafx.application.Platform;
 public class UpdateThread extends Thread{
 
     private RistoranteController controller;
-    private Prenotazione p = Prenotazione.creaPrenotazione(new Ora(19, 10),"Thomas", "Rossi");
 
     public UpdateThread(RistoranteController c) {
         controller = c;
@@ -16,11 +15,12 @@ public class UpdateThread extends Thread{
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        controller.setTempo(ThreadTempo.getTempo());
-                        // if(Azienda.gestionePrenotazioni.getUltimaPrenotazione() == null)
-                        //     return;
-                        if(ThreadTempo.getOra().isEqual(p.getOraAppuntamento())){
-                            controller.setPannelloOrdinazione();
+                        controller.setTempo(Azienda.tempo.getTempo());
+                        Azienda.gestionePrenotazioni.visitaLista();
+                        if(Azienda.gestionePrenotazioni.getUltimaPrenotazione() == null)
+                            return;
+                        if(Azienda.tempo.getOra().isEqual(Azienda.gestionePrenotazioni.getUltimaPrenotazione().getOraAppuntamento())){
+                            controller.setPannelloOrdinazione(Azienda.gestionePrenotazioni.getUltimaPrenotazione());
                         }
                     }
                 });

@@ -1,6 +1,4 @@
 
-import java.util.Vector;
-
 public class GestionePrenotazioni {
     private Node head;
 
@@ -11,14 +9,12 @@ public class GestionePrenotazioni {
         numeroPrenotazioni = 0;
     }
 
-    public Vector<Prenotazione> getPrenotazioni() {
-        Vector<Prenotazione> prenotazioni = new Vector<Prenotazione>();
-        Node p = head;
-        while (p != null) {
-            prenotazioni.addElement(p.getDati());
-            p = p.getLink();
+    public void visitaLista() {
+        Node current = head;
+        while (current != null) {
+            System.out.println(current.getDati().toString());
+            current = current.getLink();
         }
-        return prenotazioni;
     }
 
     public Prenotazione getUltimaPrenotazione() {
@@ -32,14 +28,14 @@ public class GestionePrenotazioni {
         return p.getDati();
     }
 
-    public void inserisciInTesta(Prenotazione p){
+    private void inserisciInTesta(Prenotazione p){
         Node n = new Node(p);
         n.setLink(head);
         head = n;
         numeroPrenotazioni++;
     }
 
-    public void inserisciInCoda(Prenotazione p){
+    private void inserisciInCoda(Prenotazione p){
         Node h = head;
         Node n = new Node(p);
         if(h == null)

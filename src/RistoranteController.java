@@ -18,13 +18,12 @@ public class RistoranteController {
         timeLabel.setText(tempo);
     }
 
-    public void setPannelloOrdinazione() {
+    public void setPannelloOrdinazione(Prenotazione p){
+        lbTitoloOrdinazione.setText("Ordinazione di " + p.getNome() + " " + p.getCognome() + ".\nCosa vuole ordinare?");
         paneOrdinazione.setVisible(true);
     }
 
     public void inizia(){
-        ThreadTempo t = new ThreadTempo();
-        t.start();
         UpdateThread updateThread = new UpdateThread(this);
         updateThread.start();
         for(int i = 0; i < Azienda.clienti.size(); i++){
@@ -39,10 +38,12 @@ public class RistoranteController {
             return;
         }
 
-
-
         String ordinazione = tfOrdinazione.getText();
 
+
+        btnOrdina.setVisible(false);
+        tfOrdinazione.setVisible(false);
+        lbTitoloOrdinazione.setText("Grazie! Il piatto " + ordinazione + " è in preparazione e arrivererà a breve!.");
     }
 
 }

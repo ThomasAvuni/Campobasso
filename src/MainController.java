@@ -36,7 +36,8 @@ public class MainController {
     public void onIniziaClicked(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("SceneRistorante.fxml"));
         root = loader.load();
-        
+        Azienda.tempo.start();
+
         RistoranteController controller = loader.getController();
         controller.inizia();
 
@@ -53,6 +54,7 @@ public class MainController {
         String[] data = tfOra.getText().split(":");
         if(!nome.isEmpty() && !cognome.isEmpty() && !data[0].isEmpty() && !data[1].isEmpty()){
             Cliente c = new Cliente(nome, cognome, new Ora(Integer.parseInt(data[0]), Integer.parseInt(data[1])));
+            Azienda.gestionePrenotazioni.aggiungiPrenotazione(c.getPrenotazione());
             aggingiCliente(c);
         }
         tfNome.clear();
