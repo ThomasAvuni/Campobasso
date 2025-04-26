@@ -1,7 +1,5 @@
 import java.util.Vector;
 
-import org.ietf.jgss.ChannelBinding; 
-
 public class Chef extends Dipendente{
     private Cibo cibo;
     private Piatto piattoPronto;
@@ -29,7 +27,7 @@ public class Chef extends Dipendente{
                 
             }
             else{
-            // DA FARE (interfaccia grafica)
+            MainController.getRC().OrdinazioneSbagliata(new String("Il piatto ordinato non e' nel menu"));
             }
 
         }

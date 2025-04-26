@@ -25,6 +25,7 @@ public class MainController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private static RistoranteController RC;
 
     private void aggingiCliente(Cliente c) {
         if (c != null) {
@@ -38,8 +39,8 @@ public class MainController {
         root = loader.load();
         Azienda.tempo.start();
 
-        RistoranteController controller = loader.getController();
-        controller.inizia();
+        RC = loader.getController();
+        RC.inizia();
 
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -60,5 +61,9 @@ public class MainController {
         tfNome.clear();
         tfCongome.clear();
         tfOra.clear();
+    }
+    
+    public static RistoranteController getRC () {
+        return RC; 
     }
 }

@@ -8,11 +8,20 @@ import javafx.scene.layout.VBox;
 
 public class RistoranteController {
     @FXML Label timeLabel;
+    @FXML Label lbOrdineSbagliato;
     @FXML private VBox listaClienti;
     @FXML private TextField tfOrdinazione;
     @FXML private Button btnOrdina;
     @FXML private Label lbTitoloOrdinazione;
     @FXML private Pane paneOrdinazione;
+
+
+    public void OrdinazioneSbagliata (String a) {
+        lbOrdineSbagliato.setText(a);
+        lbOrdineSbagliato.setVisible(true);
+    }
+    
+    
 
     public void setTempo(String tempo) {
         timeLabel.setText(tempo);
