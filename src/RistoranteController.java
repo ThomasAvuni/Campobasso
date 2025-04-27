@@ -52,6 +52,10 @@ public class RistoranteController {
         if(tfOrdinazione.getText().isEmpty()){
             return;
         }
+        
+        if(tfQuantita.getText().isEmpty()){
+            tfQuantita.setText("1");
+        }
 
         String ordinazione = tfOrdinazione.getText();
 

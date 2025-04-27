@@ -15,7 +15,7 @@ public class Cameriere extends Dipendente {
     }
 
     public void prendiOrdine(Cliente cliente, Cibo cibo) {
-        this.tavolo = cliente.getTavolo();
+        // this.tavolo = cliente.getTavolo();
         Azienda.getChef().AddCiboInCoda(cibo);
         Azienda.getChef().Cucina();
     }

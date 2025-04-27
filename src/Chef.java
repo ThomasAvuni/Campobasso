@@ -29,17 +29,13 @@ public class Chef extends Dipendente{
         }
     }
 
-    public void AddCiboInCoda (Cibo cibo) {
-        for (int i = 0; i < cibiDaPreparare.size(); i ++){
-            cibiDaPreparare.addElement(this.cibo);
-        }
+    public void AddCiboInCoda(Cibo cibo) {
+        cibiDaPreparare.addElement(this.cibo);
     }
 
     @Override
     public void calcolaStipendio() {
         setStipendio(3000);
     }
-    
-
 
 }
