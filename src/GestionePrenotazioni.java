@@ -9,23 +9,10 @@ public class GestionePrenotazioni {
         numeroPrenotazioni = 0;
     }
 
-    public void visitaLista() {
-        Node current = head;
-        while (current != null) {
-            System.out.println(current.getDati().toString());
-            current = current.getLink();
-        }
-    }
-
-    public Prenotazione getUltimaPrenotazione() {
-        if (head == null) {
+    public Prenotazione getPrimaPrenotazione(){
+        if(head == null)
             return null;
-        }
-        Node p = head;
-        while (p.getLink() != null) {
-            p = p.getLink();
-        }
-        return p.getDati();
+        return head.getDati();
     }
 
     private void inserisciInTesta(Prenotazione p){

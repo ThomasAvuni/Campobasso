@@ -21,11 +21,13 @@ public class MainController {
     @FXML private TextField tfOra;
     @FXML private TextField tfNome;
     @FXML private VBox listaClienti;
+    @FXML private Label lbOraSbagliata;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
     private static RistoranteController RC;
+
 
     private void aggingiCliente(Cliente c) {
         if (c != null) {
@@ -55,6 +57,11 @@ public class MainController {
         String[] data = tfOra.getText().split(":");
         if(!nome.isEmpty() && !cognome.isEmpty() && !data[0].isEmpty() && !data[1].isEmpty()){
             Cliente c = new Cliente(nome, cognome, new Ora(Integer.parseInt(data[0]), Integer.parseInt(data[1])));
+            if(c.getPrenotazione() == null){
+                lbOraSbagliata.setVisible(true);
+                return;
+            }
+            lbOraSbagliata.setVisible(false);
             Azienda.gestionePrenotazioni.aggiungiPrenotazione(c.getPrenotazione());
             aggingiCliente(c);
         }

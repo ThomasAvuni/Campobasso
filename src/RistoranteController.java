@@ -11,25 +11,29 @@ public class RistoranteController {
     @FXML Label lbOrdineSbagliato;
     @FXML private VBox listaClienti;
     @FXML private TextField tfOrdinazione;
+    @FXML private TextField tfQuantita;
     @FXML private Button btnOrdina;
     @FXML private Label lbTitoloOrdinazione;
     @FXML private Pane paneOrdinazione;
+    @FXML private Pane paneRingraziamenti;
 
+    private Cliente cliente;
 
     public void OrdinazioneSbagliata (String a) {
         lbOrdineSbagliato.setText(a);
         lbOrdineSbagliato.setVisible(true);
     }
-    
-    
 
     public void setTempo(String tempo) {
         timeLabel.setText(tempo);
     }
 
-    public void setPannelloOrdinazione(Prenotazione p){
+    public void setPannelloOrdinazione(Prenotazione p, Cliente c){
         lbTitoloOrdinazione.setText("Ordinazione di " + p.getNome() + " " + p.getCognome() + ".\nCosa vuole ordinare?");
         paneOrdinazione.setVisible(true);
+        tfOrdinazione.setVisible(true);
+        tfQuantita.setVisible(true);
+        btnOrdina.setVisible(true);
     }
 
     public void inizia(){
@@ -42,6 +46,8 @@ public class RistoranteController {
         }
     }
 
+    // Pane Ringraziamenti, Pane Ordinazione sbagliata
+
     public void ordina(MouseEvent e){
         if(tfOrdinazione.getText().isEmpty()){
             return;
@@ -49,10 +55,14 @@ public class RistoranteController {
 
         String ordinazione = tfOrdinazione.getText();
 
-
-        btnOrdina.setVisible(false);
+        lbTitoloOrdinazione.setText("Grazie! Il piatto " + ordinazione + " è in preparazione e arrivererà a breve!");
+        tfOrdinazione.clear();
         tfOrdinazione.setVisible(false);
-        lbTitoloOrdinazione.setText("Grazie! Il piatto " + ordinazione + " è in preparazione e arrivererà a breve!.");
+        tfQuantita.clear();
+        tfQuantita.setVisible(false);
+        btnOrdina.setVisible(false);
+
+        Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, Integer.parseInt(tfQuantita.getText())));
     }
 
 }

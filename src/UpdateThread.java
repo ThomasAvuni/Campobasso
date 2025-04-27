@@ -16,11 +16,11 @@ public class UpdateThread extends Thread{
                     @Override
                     public void run() {
                         controller.setTempo(Azienda.tempo.getTempo());
-                        Azienda.gestionePrenotazioni.visitaLista();
-                        if(Azienda.gestionePrenotazioni.getUltimaPrenotazione() == null)
+                        if(Azienda.gestionePrenotazioni.getPrimaPrenotazione() == null)
                             return;
-                        if(Azienda.tempo.getOra().isEqual(Azienda.gestionePrenotazioni.getUltimaPrenotazione().getOraAppuntamento())){
-                            controller.setPannelloOrdinazione(Azienda.gestionePrenotazioni.getUltimaPrenotazione());
+                        if(Azienda.tempo.getOra().isEqual(Azienda.gestionePrenotazioni.getPrimaPrenotazione().getOraAppuntamento())){
+                            controller.setPannelloOrdinazione(Azienda.gestionePrenotazioni.getPrimaPrenotazione(), Azienda.gestionePrenotazioni.getPrimaPrenotazione().getCliente());
+                            Azienda.gestionePrenotazioni.elimina(Azienda.gestionePrenotazioni.getPrimaPrenotazione());
                         }
                     }
                 });
