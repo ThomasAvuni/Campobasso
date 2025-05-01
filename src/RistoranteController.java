@@ -8,7 +8,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class RistoranteController {
-    private boolean OrdinazioneSbagliata = false; 
     @FXML private Label timeLabel;
     @FXML private VBox listaClienti;
     @FXML private TextField tfOrdinazione;
@@ -22,11 +21,9 @@ public class RistoranteController {
     private Cliente cliente;
 
     public void OrdinazioneSbagliata (String a) {
-        OrdinazioneSbagliata = true;
         lbOrdinazioneSbagliata.setText(a);
         lbOrdinazioneSbagliata.setVisible(true);
     }
-
 
     public void setTempo(String tempo) {
         timeLabel.setText(tempo);
@@ -62,29 +59,28 @@ public class RistoranteController {
         }
 
         String ordinazione = tfOrdinazione.getText();
-        if (OrdinazioneSbagliata == false){
-        lbTitoloOrdinazione.setText("Grazie! Il piatto " + ordinazione + " è in preparazione e arrivererà a breve!");
-        lbOrdinazioneSbagliata.setVisible(false);
-        tfOrdinazione.clear();
-        tfOrdinazione.setVisible(false);
-        tfQuantita.clear();
-        tfQuantita.setVisible(false);
-        btnOrdina.setVisible(false);
-        }
-        else {
-            
+        boolean ordinazioneSbagliata = Sala.getCameriere().ControllaOrdinazione(ordinazione);
+        if(!ordinazioneSbagliata){
+            lbTitoloOrdinazione.setText("Grazie! Il piatto " + ordinazione + " è in preparazione e arrivererà a breve!");
+            lbOrdinazioneSbagliata.setVisible(false);
+            tfOrdinazione.clear();
+            tfOrdinazione.setVisible(false);
+            tfQuantita.clear();
+            tfQuantita.setVisible(false);
+            btnOrdina.setVisible(false);
+            Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
+
+            new Thread(() -> {
+                try {
+                Thread.sleep(3000);
+                Platform.runLater(() -> paneOrdinazione.setVisible(false));
+                } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+                }
+            }).start();
+
         }
 
-        new Thread(() -> {
-            try {
-            Thread.sleep(3000);
-            Platform.runLater(() -> paneOrdinazione.setVisible(false));
-            } catch (InterruptedException ex) {
-            Thread.currentThread().interrupt();
-            }
-        }).start();
-
-        Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
     }
 
 }
