@@ -33,10 +33,6 @@ public class Cameriere extends Dipendente {
     }
 
     public void portaPiatto() {
-        // if(Azienda.getChef().getPiattoPronto() != null){
-        //     System.out.println("Porto il piatto " + Azienda.getChef().getPiattoPronto().getNome() + " al tavolo " + tavolo.getNumero());
-        //     Azienda.getChef().getPiattoPronto().setLavato("sporco");
-        //     AiutoCuoco.piattiDaLavare.addElement(Azienda.getChef().getPiattoPronto());
-        // }
+        
     }
 }
