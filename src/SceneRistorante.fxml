@@ -47,6 +47,7 @@
             <Button fx:id="btnOrdina" layoutX="102.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#ordina" prefHeight="33.0" prefWidth="176.0" text="Ordina" />
             <TextField fx:id="tfOrdinazione" layoutX="100.0" layoutY="107.0" prefWidth="180.0" promptText="Scegli dal menu!" />
             <TextField fx:id="tfQuantita" layoutX="100.0" layoutY="163.0" prefWidth="180.0" promptText="Insiresci la quantità" />
+            <Label fx:id="lbOrdinazioneSbagliata" layoutY="201.0" prefHeight="46.0" prefWidth="380.0" visible="false" wrapText="true" />
          </children>
       </Pane>
    </children>
