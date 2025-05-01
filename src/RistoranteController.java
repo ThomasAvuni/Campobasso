@@ -1,3 +1,4 @@
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -50,8 +51,6 @@ public class RistoranteController {
         Sala.RiempiSala();
     }
 
-    // Pane Ringraziamenti, Pane Ordinazione sbagliata
-
     public void ordina(MouseEvent e){
         
         if(tfOrdinazione.getText().isEmpty()){
@@ -75,6 +74,16 @@ public class RistoranteController {
         else {
             
         }
+
+        Platform.runLater(() -> {
+            new Thread(() -> {
+                try {
+                    Thread.sleep(3000);
+                    Platform.runLater(() -> paneOrdinazione.setVisible(false));
+                } catch (InterruptedException ex) {
+                }
+            }).start();
+        });
 
         Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
     }
