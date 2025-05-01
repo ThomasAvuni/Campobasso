@@ -50,5 +50,6 @@
             <Label fx:id="lbOrdinazioneSbagliata" layoutY="201.0" prefHeight="46.0" prefWidth="380.0" visible="false" wrapText="true" />
          </children>
       </Pane>
+      <Pane fx:id="paneOrdinazione1" layoutX="20.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0" />
    </children>
 </AnchorPane>

@@ -18,6 +18,8 @@ public class RistoranteController {
     @FXML private Pane paneOrdinazione;
     @FXML private Pane paneRingraziamenti;
     @FXML private Label lbOrdinazioneSbagliata;
+    @FXML private Label lbPiattoPronto;
+    @FXML private Pane panePiattoPronto;
 
     private Cliente cliente;
 
