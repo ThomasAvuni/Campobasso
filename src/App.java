@@ -17,4 +17,5 @@ public class App extends Application {
         Azienda a = new Azienda();
         a.inizia();
     }
+
 }

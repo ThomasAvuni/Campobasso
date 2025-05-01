@@ -8,7 +8,6 @@ import javafx.scene.layout.VBox;
 
 public class RistoranteController {
     @FXML Label timeLabel;
-    @FXML Label lbOrdineSbagliato;
     @FXML private VBox listaClienti;
     @FXML private TextField tfOrdinazione;
     @FXML private TextField tfQuantita;
@@ -20,8 +19,7 @@ public class RistoranteController {
     private Cliente cliente;
 
     public void OrdinazioneSbagliata (String a) {
-        lbOrdineSbagliato.setText(a);
-        lbOrdineSbagliato.setVisible(true);
+        lbTitoloOrdinazione.setText(a);
     }
 
     public void setTempo(String tempo) {
@@ -44,11 +42,13 @@ public class RistoranteController {
             Label label = new Label(c.getNome() + " " + c.getCognome() + " " + c.getPrenotazione().getOraAppuntamento().toString());
             listaClienti.getChildren().add(label);
         }
+        Sala.RiempiSala();
     }
 
     // Pane Ringraziamenti, Pane Ordinazione sbagliata
 
     public void ordina(MouseEvent e){
+   
         if(tfOrdinazione.getText().isEmpty()){
             return;
         }
@@ -58,7 +58,6 @@ public class RistoranteController {
         }
 
         String ordinazione = tfOrdinazione.getText();
-
         lbTitoloOrdinazione.setText("Grazie! Il piatto " + ordinazione + " è in preparazione e arrivererà a breve!");
         tfOrdinazione.clear();
         tfOrdinazione.setVisible(false);
@@ -66,7 +65,7 @@ public class RistoranteController {
         tfQuantita.setVisible(false);
         btnOrdina.setVisible(false);
 
-        Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, Integer.parseInt(tfQuantita.getText())));
+        Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
     }
 
 }

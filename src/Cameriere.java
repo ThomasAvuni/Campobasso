@@ -15,9 +15,10 @@ public class Cameriere extends Dipendente {
     }
 
     public void prendiOrdine(Cliente cliente, Cibo cibo) {
-        // this.tavolo = cliente.getTavolo();
-        Azienda.getChef().AddCiboInCoda(cibo);
-        Azienda.getChef().Cucina();
+        if(cibo != null){
+            Azienda.getChef().AddCiboInCoda(cibo);
+            Azienda.getChef().Cucina();
+        }
     }
 
     public void AddPiattoPronto (Piatto piatto) {

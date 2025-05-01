@@ -14,6 +14,7 @@ public class Sala {
             tavoli.addElement(new Tavolo(i + 1, 4));
         }
         cameriere = new Cameriere("Sofia", "Scalia", new Data(1992, 12, 3));
+        System.out.println(cameriere.getNome() + " " + cameriere.getCognome() + " è il cameriere del ristorante.");
     }
 
     public static Vector<Tavolo> getTavoli(){

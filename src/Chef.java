@@ -1,7 +1,6 @@
 import java.util.Vector;
 
 public class Chef extends Dipendente{
-    private Cibo cibo;
     Vector<Cibo> cibiDaPreparare;
     public Chef(String nome, String cognome, Data dataNascita) {
         super(nome, cognome, dataNascita);
@@ -10,6 +9,12 @@ public class Chef extends Dipendente{
     }
     public void Cucina (){
         for (int i = 0; i < cibiDaPreparare.size() ; i++){
+            if(cibiDaPreparare.elementAt(i) == null){
+                System.out.println("Il cibo da preparare e' nullo");
+                continue;
+            }
+            else
+                System.out.println("Il cibo da preparare e' " + cibiDaPreparare.elementAt(i).getNome());
             if (cibiDaPreparare.elementAt(i).getNome().toLowerCase().contains("pasta".toLowerCase())){
                 if(cibiDaPreparare.elementAt(i).getNome().toLowerCase().contains("zucchine".toLowerCase())){
                     Sala.getCameriere().AddPiattoPronto(new Piatto("Pasta e zucchine"));
@@ -23,14 +28,14 @@ public class Chef extends Dipendente{
                 
             }
             else{
-                MainController.getRC().OrdinazioneSbagliata(new String("Il piatto " + cibiDaPreparare.elementAt(i).getNome() + " non e' nel menu"));
+                MainController.getRC().OrdinazioneSbagliata(new String("Il piatto " + cibiDaPreparare.elementAt(i).getNome() + " non e' nel menu!"));
             }
 
         }
     }
 
     public void AddCiboInCoda(Cibo cibo) {
-        cibiDaPreparare.addElement(this.cibo);
+        cibiDaPreparare.addElement(cibo);
     }
 
     @Override
