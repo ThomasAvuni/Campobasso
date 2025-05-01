@@ -11,11 +11,9 @@ public class Chef extends Dipendente{
     public void Cucina (){
         for (int i = 0; i < cibiDaPreparare.size() ; i++){
             if(cibiDaPreparare.elementAt(i) == null){
-                System.out.println("Il cibo da preparare e' nullo");
                 continue;
             }
-            else
-                System.out.println("Il cibo da preparare e' " + cibiDaPreparare.elementAt(i).getNome());
+            
             if (cibiDaPreparare.elementAt(i).getNome().toLowerCase().contains("pasta".toLowerCase())){
                 if(cibiDaPreparare.elementAt(i).getNome().toLowerCase().contains("zucchine".toLowerCase())){
                     Sala.getCameriere().AddPiattoPronto(new Piatto("Pasta e zucchine"));
@@ -28,10 +26,6 @@ public class Chef extends Dipendente{
                 Sala.getCameriere().AddPiattoPronto(new Piatto("Carne alla griglia"));
                 
             }
-            else{
-                MainController.getRC().OrdinazioneSbagliata(new String("Il piatto " + cibiDaPreparare.elementAt(i).getNome() + " non e' nel menu!"));
-            }
-
         }
     }
 

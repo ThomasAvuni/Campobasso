@@ -25,6 +25,14 @@ public class Cameriere extends Dipendente {
         piattiPronti.addElement(piatto);
     }
 
+    public boolean ControllaOrdinazione(String ordinazione){
+        if(ordinazione.equalsIgnoreCase("pasta e zucchine") || ordinazione.equalsIgnoreCase("pasta al pomodoro") || ordinazione.equalsIgnoreCase("carne alla griglia")){
+            return false;
+        }
+        MainController.getRC().OrdinazioneSbagliata(new String("Il piatto " + ordinazione + " non e' nel menu!"));
+        return true;
+    }
+
     public void portaPiatto() {
         // if(Azienda.getChef().getPiattoPronto() != null){
         //     System.out.println("Porto il piatto " + Azienda.getChef().getPiattoPronto().getNome() + " al tavolo " + tavolo.getNumero());
