@@ -7,6 +7,7 @@ public class Chef extends Dipendente{
         cibiDaPreparare = new Vector<Cibo>();
         this.ruolo = "Chef";
     }
+
     public void Cucina (){
         for (int i = 0; i < cibiDaPreparare.size() ; i++){
             if(cibiDaPreparare.elementAt(i) == null){
