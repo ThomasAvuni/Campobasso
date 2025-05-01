@@ -17,7 +17,6 @@ public class Cameriere extends Dipendente {
     public void prendiOrdine(Cliente cliente, Cibo cibo) {
         if(cibo != null){
             Azienda.getChef().AddCiboInCoda(cibo);
-            Azienda.getChef().Cucina();
         }
     }
 
