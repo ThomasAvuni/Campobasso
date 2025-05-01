@@ -18,13 +18,14 @@ public class Chef extends Dipendente{
                 if(cibiDaPreparare.elementAt(i).getNome().toLowerCase().contains("zucchine".toLowerCase())){
                     Sala.getCameriere().AddPiattoPronto(new Piatto("Pasta e zucchine"));
                 }
+                
                 else if(cibiDaPreparare.elementAt(i).getNome().toLowerCase().contains("pomodoro".toLowerCase())){
                     Sala.getCameriere().AddPiattoPronto(new Piatto("Pasta al pomodoro"));
                 }
             }
+
             else if (cibiDaPreparare.elementAt(i).getNome().toLowerCase().contains("carne".toLowerCase())){
                 Sala.getCameriere().AddPiattoPronto(new Piatto("Carne alla griglia"));
-                
             }
         }
     }
