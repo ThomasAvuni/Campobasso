@@ -64,15 +64,14 @@ public class RistoranteController {
         tfQuantita.setVisible(false);
         btnOrdina.setVisible(false);
 
-        Platform.runLater(() -> {
-            new Thread(() -> {
-                try {
-                    Thread.sleep(3000);
-                    Platform.runLater(() -> paneOrdinazione.setVisible(false));
-                } catch (InterruptedException ex) {
-                }
-            }).start();
-        });
+        new Thread(() -> {
+            try {
+            Thread.sleep(3000);
+            Platform.runLater(() -> paneOrdinazione.setVisible(false));
+            } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+            }
+        }).start();
 
         Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
     }
