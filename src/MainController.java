@@ -61,6 +61,7 @@ public class MainController {
                 lbOraSbagliata.setVisible(true);
                 return;
             }
+
             lbOraSbagliata.setVisible(false);
             Azienda.gestionePrenotazioni.aggiungiPrenotazione(c.getPrenotazione());
             aggingiCliente(c);

@@ -1,16 +1,22 @@
+import java.util.function.Function;
+
 public class ThreadTempo extends Thread{
     //Attrubuti della classe
     private int ms;
     private Ora ora;
     private Data data;
     public static final Ora ORARIO_APERTURA = new Ora(19, 00, 00);
+    private boolean pausa = false;
 
     public ThreadTempo() {
         super();
         ora = ORARIO_APERTURA;
         data = new Data(1, 1, 2025);
     }
-
+    
+    public void setPausa(boolean pausa) {
+        this.pausa = pausa;
+    }
 
     //Getter
     public Ora getOra(){
@@ -27,6 +33,13 @@ public class ThreadTempo extends Thread{
         //Richiamare il metodo run della superclasse
         super.run();
         while(true){
+            if(pausa){
+                System.out.print("In pausa     \r");
+                continue;
+            }
+            else{
+                System.out.print("In esecuzione\r");
+            
             //Incremento i millisecondi
             ms++;
             //Quando i millisecondi sono maggiori di 10 si incrementano i secondi
@@ -67,6 +80,7 @@ public class ThreadTempo extends Thread{
             } catch (InterruptedException e) {
 
             }
+        }
         }
     }
 }

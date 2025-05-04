@@ -50,6 +50,10 @@ public class RistoranteController {
         Sala.RiempiSala();
     }
 
+    public void prova(){
+        System.out.println("Prova");
+    }
+
     public void ordina(MouseEvent e){
         
         if(tfOrdinazione.getText().isEmpty()){
@@ -70,11 +74,13 @@ public class RistoranteController {
             tfQuantita.clear();
             tfQuantita.setVisible(false);
             btnOrdina.setVisible(false);
-            Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
 
             new Thread(() -> {
                 try {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
+                Azienda.tempo.setPausa(false);
+                Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
+
                 Platform.runLater(() -> paneOrdinazione.setVisible(false));
                 } catch (InterruptedException ex) {
                 Thread.currentThread().interrupt();
