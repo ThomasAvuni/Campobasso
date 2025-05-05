@@ -1,5 +1,3 @@
-import java.util.function.Function;
-
 public class ThreadTempo extends Thread{
     //Attrubuti della classe
     private int ms;
@@ -24,7 +22,7 @@ public class ThreadTempo extends Thread{
     }
  
     public String getTempo() {
-        return "[" + getOra().ora + ":" + getOra().minuti + ":" + getOra().secondi + "]";
+        return "[" + getOra().ora + ":" + getOra().minuti + "]";
     }
 
     //Funzione che calcola minuti, secondi e ore
