@@ -83,7 +83,6 @@ public class RistoranteController {
 
                 Platform.runLater(() -> paneOrdinazione.setVisible(false));
                 } catch (InterruptedException ex) {
-                Thread.currentThread().interrupt();
                 }
             }).start();
 
