@@ -32,11 +32,14 @@ public class ThreadTempo extends Thread{
         super.run();
         while(true){
             if(pausa){
-                System.out.print("In pausa     \r");
+                try {
+                    Thread.sleep(5);
+                } catch (InterruptedException e) {
+                }
                 continue;
             }
             else{
-                System.out.print("In esecuzione\r");
+                // System.out.print("In esecuzione\r");
             
             //Incremento i millisecondi
             ms++;
