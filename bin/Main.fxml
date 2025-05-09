@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
    <children>
-      <Pane fx:id="panAggPrenotazione" layoutX="20.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
+      <Pane fx:id="panAggPrenotazione" layoutX="29.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
          <children>
             <Button layoutX="101.0" layoutY="260.0" mnemonicParsing="false" onMouseClicked="#onAggPrenotazioneClicked" text="Aggiungi prenotazione" />
             <TextField fx:id="tfNome" layoutX="98.0" layoutY="55.0" prefWidth="180.0" promptText="Nome" />
@@ -22,10 +22,10 @@
                </font>
             </Label>
             <Button fx:id="btnInizia" layoutX="134.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#onIniziaClicked" text="Inzia servizio" />
-            <Label fx:id="lbOraSbagliata" layoutX="89.0" layoutY="169.0" prefHeight="77.0" prefWidth="199.0" text="L'ora della prenotazione non è valida! L'orario d'apertura è 19:00" visible="false" wrapText="true" />
+            <Label fx:id="lbOraSbagliata" alignment="CENTER" layoutX="89.0" layoutY="169.0" prefHeight="77.0" prefWidth="199.0" text="L'ora della prenotazione non è valida! L'orario d'apertura è 19:00" textAlignment="CENTER" visible="false" wrapText="true" />
          </children>
       </Pane>
-      <Pane fx:id="paneClienti" layoutX="520.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
+      <Pane fx:id="paneClienti" layoutX="613.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
          <children>
             <VBox fx:id="listaClienti" layoutX="8.0" layoutY="43.0" prefHeight="300.0" prefWidth="364.0" />
             <Label layoutY="14.0" prefHeight="23.0" prefWidth="380.0" styleClass="titoli" text="Lista delle prenotazioni">

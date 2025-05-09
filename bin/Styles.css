@@ -24,7 +24,8 @@
 }
 
 #timeLabel{
-    -fx-font-size: 18;
+    -fx-font-family: "Lucida Console";
+    -fx-font-size: 28;
 }
 
 #paneClienti{
