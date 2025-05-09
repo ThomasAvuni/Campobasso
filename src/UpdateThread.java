@@ -21,6 +21,7 @@ public class UpdateThread extends Thread{
                         if(Azienda.tempo.getOra().isEqual(Azienda.gestionePrenotazioni.getPrimaPrenotazione().getOraAppuntamento())){
                             Azienda.tempo.setPausa(true);
                             controller.setPannelloOrdinazione(Azienda.gestionePrenotazioni.getPrimaPrenotazione(), Azienda.gestionePrenotazioni.getPrimaPrenotazione().getCliente());
+                            Azienda.gestionePrenotazioni.elimina(Azienda.gestionePrenotazioni.getPrimaPrenotazione());
                         }
 
                         if(Azienda.gestionePrenotazioni.getPrimaPrenotazione() == null){

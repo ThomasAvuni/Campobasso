@@ -13,11 +13,11 @@ public class Cliente{
         if(prenotazione != null){
             prenotazione.setCliente(this);
             Azienda.clienti.addElement(this);
+            AssegnaTavolo();
         }
         else{
             tavolo = new Tavolo(0, 0);
         }
- 
     }
 
     public String getNome() {

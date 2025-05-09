@@ -11,10 +11,10 @@ public class Sala {
         Random r = new Random();
         tavoli = new Vector<Tavolo>(DIMENSIONE_SALA);
         for(int i = 0; i < DIMENSIONE_SALA; i++){
-            tavoli.addElement(new Tavolo(i + 1, 4));
+            tavoli.addElement(new Tavolo(i + 1, r.nextInt(4) + 1));
+            System.out.println("Tavolo " + (i + 1) + " con " + tavoli.elementAt(i).getPosti() + " posti");
         }
         cameriere = new Cameriere("Sofia", "Scalia", new Data(1992, 12, 3));
-        System.out.println(cameriere.getNome() + " " + cameriere.getCognome() + " è il cameriere del ristorante.");
     }
 
     public static Vector<Tavolo> getTavoli(){

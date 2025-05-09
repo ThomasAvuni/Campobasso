@@ -15,6 +15,15 @@ public class GestionePrenotazioni {
         return head.getDati();
     }
 
+    public Prenotazione getUltimaPrenotazione(){
+        if(head == null)
+            return null;
+        Node h = head;
+        while(h.getLink() != null)
+            h = h.getLink();
+        return h.getDati();
+    }
+
     private void inserisciInTesta(Prenotazione p){
         Node n = new Node(p);
         n.setLink(head);

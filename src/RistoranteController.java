@@ -32,6 +32,7 @@ public class RistoranteController {
     }
 
     public void setPannelloOrdinazione(Prenotazione p, Cliente c){
+        cliente = c;
         lbTitoloOrdinazione.setText("Ordinazione di " + p.getNome() + " " + p.getCognome() + ".\nCosa vuole ordinare?");
         paneOrdinazione.setVisible(true);
         tfOrdinazione.setVisible(true);
@@ -47,7 +48,6 @@ public class RistoranteController {
             Label label = new Label(c.getNome() + " " + c.getCognome() + " " + c.getPrenotazione().getOraAppuntamento().toString());
             listaClienti.getChildren().add(label);
         }
-        Sala.RiempiSala();
     }
 
     public void prova(){
@@ -63,7 +63,7 @@ public class RistoranteController {
         if(tfQuantita.getText().isEmpty()){
             tfQuantita.setText("1");
         }
-
+        
         String ordinazione = tfOrdinazione.getText();
         boolean ordinazioneSbagliata = Sala.getCameriere().ControllaOrdinazione(ordinazione);
         if(!ordinazioneSbagliata){
@@ -75,11 +75,9 @@ public class RistoranteController {
             tfQuantita.setVisible(false);
             btnOrdina.setVisible(false);
             Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
-            Azienda.gestionePrenotazioni.elimina(Azienda.gestionePrenotazioni.getPrimaPrenotazione());
-
             new Thread(() -> {
                 try {
-                Thread.sleep(5000);
+                Thread.sleep(3000);
                 Azienda.tempo.setPausa(false);
 
                 Platform.runLater(() -> paneOrdinazione.setVisible(false));
