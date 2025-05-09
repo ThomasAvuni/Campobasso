@@ -77,7 +77,7 @@ public class RistoranteController {
 
             new Thread(() -> {
                 try {
-                Thread.sleep(1000);
+                Thread.sleep(5000);
                 Azienda.tempo.setPausa(false);
                 Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
 
