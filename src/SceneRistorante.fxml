@@ -20,14 +20,14 @@
             </Label>
          </children>
       </Pane>
-      <Label fx:id="timeLabel" layoutX="904.0" layoutY="24.0" prefHeight="23.0" prefWidth="116.0" text="[19:00]" />
+      <Label fx:id="timeLabel" layoutX="932.0" layoutY="24.0" prefHeight="23.0" prefWidth="88.0" text="[19:00]" />
       <Pane fx:id="paneMenu" layoutX="520.0" layoutY="384.0" prefHeight="350.0" prefWidth="380.0">
          <children>
             <VBox fx:id="listaClienti1" layoutX="8.0" layoutY="43.0" prefHeight="300.0" prefWidth="364.0" spacing="10.0">
                <children>
-                  <Label prefHeight="19.0" prefWidth="365.0" text="Pasta e zucchine            12€" />
+                  <Label prefHeight="19.0" prefWidth="365.0" text="Pasta e zucchine               12€" />
                   <Label prefHeight="19.0" prefWidth="365.0" text="Pasta al pomodoro           10€" />
-                  <Label prefHeight="19.0" prefWidth="365.0" text="Carne alla griglia          15€" />
+                  <Label prefHeight="19.0" prefWidth="365.0" text="Carne alla griglia              15€" />
                </children>
             </VBox>
             <Label layoutY="14.0" prefHeight="23.0" prefWidth="380.0" styleClass="titoli" text="Menu">
@@ -44,7 +44,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btnOrdina" layoutX="102.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#ordina" prefHeight="33.0" prefWidth="176.0" text="Ordina" />
+            <Button fx:id="btnOrdina" layoutX="102.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#ordina" prefHeight="33.0" prefWidth="176.0" text="Ordina" />
             <TextField fx:id="tfOrdinazione" layoutX="100.0" layoutY="107.0" prefWidth="180.0" promptText="Scegli dal menu!" />
             <TextField fx:id="tfQuantita" layoutX="100.0" layoutY="163.0" prefWidth="180.0" promptText="Insiresci la quantità" />
             <Label fx:id="lbOrdinazioneSbagliata" layoutY="201.0" prefHeight="46.0" prefWidth="380.0" visible="false" wrapText="true" />

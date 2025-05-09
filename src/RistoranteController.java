@@ -74,12 +74,13 @@ public class RistoranteController {
             tfQuantita.clear();
             tfQuantita.setVisible(false);
             btnOrdina.setVisible(false);
+            Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
+            Azienda.gestionePrenotazioni.elimina(Azienda.gestionePrenotazioni.getPrimaPrenotazione());
 
             new Thread(() -> {
                 try {
                 Thread.sleep(5000);
                 Azienda.tempo.setPausa(false);
-                Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
 
                 Platform.runLater(() -> paneOrdinazione.setVisible(false));
                 } catch (InterruptedException ex) {
