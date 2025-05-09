@@ -13,6 +13,7 @@ public class App extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
         stage.setTitle("Ristorante");
         stage.setScene(new Scene(loader.load(), 1024, 768));
+        stage.setResizable(false);
         stage.show();
         Azienda a = new Azienda();
         a.inizia();
