@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RistoranteController">
    <children>
-      <Pane fx:id="paneClienti" layoutX="520.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
+      <Pane fx:id="paneClienti" layoutX="613.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
          <children>
             <VBox fx:id="listaClienti" layoutX="8.0" layoutY="43.0" prefHeight="300.0" prefWidth="364.0" />
             <Label layoutY="14.0" prefHeight="23.0" prefWidth="380.0" styleClass="titoli" text="Lista delle prenotazioni">
@@ -20,8 +20,8 @@
             </Label>
          </children>
       </Pane>
-      <Label fx:id="timeLabel" layoutX="932.0" layoutY="24.0" prefHeight="23.0" prefWidth="88.0" text="[19:00]" />
-      <Pane fx:id="paneMenu" layoutX="520.0" layoutY="384.0" prefHeight="350.0" prefWidth="380.0">
+      <Label fx:id="timeLabel" alignment="CENTER" layoutX="442.0" layoutY="33.0" prefHeight="60.0" prefWidth="140.0" text="[19:00]" />
+      <Pane fx:id="paneMenu" layoutX="613.0" layoutY="384.0" prefHeight="350.0" prefWidth="380.0">
          <children>
             <VBox fx:id="listaClienti1" layoutX="8.0" layoutY="43.0" prefHeight="300.0" prefWidth="364.0" spacing="10.0">
                <children>
@@ -37,7 +37,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="paneOrdinazione" layoutX="20.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0" visible="false">
+      <Pane fx:id="paneOrdinazione" layoutX="29.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0" visible="false">
          <children>
             <Label fx:id="lbTitoloOrdinazione" prefHeight="86.0" prefWidth="380.0" styleClass="titoli" text="Cosa vuoi ordinare?" textAlignment="CENTER" wrapText="true">
                <font>
@@ -47,7 +47,7 @@
             <Button fx:id="btnOrdina" layoutX="102.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#ordina" prefHeight="33.0" prefWidth="176.0" text="Ordina" />
             <TextField fx:id="tfOrdinazione" layoutX="100.0" layoutY="107.0" prefWidth="180.0" promptText="Scegli dal menu!" />
             <TextField fx:id="tfQuantita" layoutX="100.0" layoutY="163.0" prefWidth="180.0" promptText="Insiresci la quantità" />
-            <Label fx:id="lbOrdinazioneSbagliata" layoutY="201.0" prefHeight="46.0" prefWidth="380.0" visible="false" wrapText="true" />
+            <Label fx:id="lbOrdinazioneSbagliata" alignment="CENTER" layoutY="201.0" prefHeight="46.0" prefWidth="380.0" text="Questo piatto non è nel menù" textAlignment="CENTER" visible="false" wrapText="true" />
          </children>
       </Pane>
    </children>
