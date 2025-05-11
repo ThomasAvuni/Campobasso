@@ -6,6 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class RistoranteController {
     @FXML private Label timeLabel;
@@ -21,6 +22,11 @@ public class RistoranteController {
     @FXML private Pane panePiattoPronto;
 
     private Cliente cliente;
+
+    void close(MouseEvent event){
+        Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
+        stage.close();
+    }
 
     public void OrdinazioneSbagliata (String a) {
         lbOrdinazioneSbagliata.setText(a);
