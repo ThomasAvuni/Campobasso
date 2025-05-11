@@ -47,6 +47,7 @@ public class Cameriere extends Dipendente {
                     } catch (InterruptedException e) {
                     }
                 }
+                Platform.runLater(() -> MainController.getRC().setLBPortaPiatto("Tutti i piatti sono stati portati.\nIl servizio è finito."));
             }
         }.start();
     }

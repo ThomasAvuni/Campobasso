@@ -44,6 +44,12 @@ public class RistoranteController {
         timeLabel.setText(tempo);
     }
 
+    public void setLBPortaPiatto(String piatto) {
+        lbPortaPiatto.setText(piatto);
+        panePortaPiatto.setVisible(true);
+        lbPortaPiatto.setVisible(true);
+    }
+
     public void portaPiatto(Piatto piatto) {
         lbPortaPiatto.setText("Ho portato il piatto " + piatto.getNome() + " al " + piatto.getCliente().getTavolo() + ".");
         panePortaPiatto.setVisible(true);
