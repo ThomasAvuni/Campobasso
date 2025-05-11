@@ -16,6 +16,10 @@ public class ThreadTempo extends Thread{
         this.pausa = pausa;
     }
 
+    public boolean getPausa() {
+        return pausa;
+    }
+
     //Getter
     public Ora getOra(){
         return ora;
@@ -77,7 +81,7 @@ public class ThreadTempo extends Thread{
 
             //Fermare il thread 
             try {
-                Thread.sleep(1);
+                Thread.sleep(5);
             } catch (InterruptedException e) {
 
             }
