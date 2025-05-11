@@ -42,7 +42,7 @@ public class RistoranteController {
 
     public void setPannelloOrdinazione(Prenotazione p, Cliente c){
         cliente = c;
-        lbTitoloOrdinazione.setText("Ordinazione di " + p.getNome() + " " + p.getCognome() + ", al tavolo " + c.getTavolo() + ".\nCosa vuole ordinare?");
+        lbTitoloOrdinazione.setText("Ordinazione di " + p.getNome() + " " + p.getCognome() + ", al " + c.getTavolo() + ".\nCosa vuole ordinare?");
         paneOrdinazione.setVisible(true);
         tfOrdinazione.setVisible(true);
         tfQuantita.setVisible(true);
@@ -76,21 +76,27 @@ public class RistoranteController {
         String ordinazione = tfOrdinazione.getText();
         boolean ordinazioneSbagliata = Sala.getCameriere().ControllaOrdinazione(ordinazione);
         if(!ordinazioneSbagliata){
+            if(Integer.parseInt(tfQuantita.getText()) > cliente.getTavolo().getPosti()){
+                lbOrdinazioneSbagliata.setText("Non puoi ordinare più piatti di quanti posti ci siano al tavolo!");
+                lbOrdinazioneSbagliata.setVisible(true);
+                return;
+            }
             lbTitoloOrdinazione.setText("Grazie! Il piatto " + ordinazione + " è in preparazione e arrivererà a breve!");
+            Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, Integer.parseInt(tfQuantita.getText()), cliente));
             lbOrdinazioneSbagliata.setVisible(false);
             tfOrdinazione.clear();
             tfOrdinazione.setVisible(false);
             tfQuantita.clear();
             tfQuantita.setVisible(false);
             btnOrdina.setVisible(false);
-            Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, 1));
             new Thread(() -> {
                 try {
-                Thread.sleep(3000);
-                Azienda.tempo.setPausa(false);
+                    Thread.sleep(3000);
+                    Azienda.tempo.setPausa(false);
 
-                Platform.runLater(() -> paneOrdinazione.setVisible(false));
+                    Platform.runLater(() -> paneOrdinazione.setVisible(false));
                 } catch (InterruptedException ex) {
+
                 }
             }).start();
 

@@ -22,7 +22,7 @@ public class Cameriere extends Dipendente {
         }
     }
 
-    public void AddPiattoPronto (Piatto piatto) {
+    public void AddPiattoPronto(Piatto piatto) {
         piattiPronti.addElement(piatto);
     }
 
@@ -34,7 +34,18 @@ public class Cameriere extends Dipendente {
         return true;
     }
 
-    public void portaPiatto() {
-        
+    public void portaPiatti() {
+        new Thread(){
+            public void run() {
+                for (int i = 0; i < piattiPronti.size(); i++){
+                    Piatto piatto = piattiPronti.elementAt(i);
+                    try {
+                        Thread.sleep(piatto.getTempoDiPreparazione() * 1000);
+                        System.out.println("Il piatto " + piatto.getNome() + " " + piatto.getCliente().getTavolo());
+                    } catch (InterruptedException e) {
+                    }
+                }
+            }
+        }.start();
     }
 }
