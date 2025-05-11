@@ -28,7 +28,6 @@ public class MainController {
     private Parent root;
     private static RistoranteController RC;
 
-
     private void aggingiCliente(Cliente c) {
         if (c != null) {
             Label label = new Label(c.getNome() + " " + c.getCognome() + " " + c.getPrenotazione().getOraAppuntamento().toString());
