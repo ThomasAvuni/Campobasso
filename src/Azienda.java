@@ -7,6 +7,7 @@ public class Azienda {
     private static AiutoCuoco aiutoCuoco;
     public static Vector<Cliente> clienti;
     public static ThreadTempo tempo;
+    public static Sala sala;
 
     public void inizia(){
         gestionePrenotazioni = new GestionePrenotazioni();
@@ -15,6 +16,9 @@ public class Azienda {
         aiutoCuoco = new AiutoCuoco("Francesco", "Marzano", new Data(1990, 5, 20));
         clienti = new Vector<Cliente>();
         tempo = new ThreadTempo();
+    
+        sala = new Sala();
+        sala.RiempiSala();
     }
 
     public static Chef getChef() {

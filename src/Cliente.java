@@ -9,6 +9,7 @@ public class Cliente{
     public Cliente(String nome, String cognome, Ora oraPrenotazione) {
         this.nome = nome;
         this.cognome = cognome;
+        random = new Random();
         prenotazione = Prenotazione.creaPrenotazione(oraPrenotazione, this.nome, this.cognome);
         if(prenotazione != null){
             prenotazione.setCliente(this);
@@ -45,10 +46,10 @@ public class Cliente{
     }
 
     public void AssegnaTavolo(){
-        if(Sala.getTavoliDisponibili().size() > 0){
-            int i = random.nextInt(Sala.getTavoliDisponibili().size());
-            tavolo = Sala.getTavoliDisponibili().elementAt(i);
-            Sala.getTavoliDisponibili().elementAt(i).setOccupato(true);
+        if(Azienda.sala.getTavoliDisponibili().size() > 0){
+            int i = random.nextInt(Azienda.sala.getTavoliDisponibili().size());
+            tavolo = Azienda.sala.getTavoliDisponibili().elementAt(i);
+            Azienda.sala.getTavoliDisponibili().elementAt(i).setOccupato(true);
         }
         else{
             tavolo = new Tavolo(0, 0);
