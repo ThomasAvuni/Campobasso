@@ -3,11 +3,11 @@ import java.util.Vector;
 
 public class Sala {
     public static final int DIMENSIONE_SALA = 20;
-    private static Vector<Tavolo> tavoli;
+    private Vector<Tavolo> tavoli;
     private static Cameriere cameriere;
     public static boolean piena = false;
 
-    public static void RiempiSala(){
+    public void RiempiSala(){
         Random r = new Random();
         tavoli = new Vector<Tavolo>(DIMENSIONE_SALA);
         for(int i = 0; i < DIMENSIONE_SALA; i++){
@@ -17,7 +17,7 @@ public class Sala {
         cameriere = new Cameriere("Sofia", "Scalia", new Data(1992, 12, 3));
     }
 
-    public static Vector<Tavolo> getTavoli(){
+    public Vector<Tavolo> getTavoli(){
         return tavoli;
     }
 
@@ -30,7 +30,7 @@ public class Sala {
         Azienda.getDirettore().pagaStipendi();
     }
 
-    public static Vector<Tavolo> getTavoliDisponibili(){
+    public Vector<Tavolo> getTavoliDisponibili(){
         Vector<Tavolo> v = new Vector<>();
         for(int i = 0; i < tavoli.size() ; i++){
             if(!tavoli.elementAt(i).getOccupato())

@@ -33,7 +33,7 @@ public class RistoranteController {
 
     public void setPannelloOrdinazione(Prenotazione p, Cliente c){
         cliente = c;
-        lbTitoloOrdinazione.setText("Ordinazione di " + p.getNome() + " " + p.getCognome() + ".\nCosa vuole ordinare?");
+        lbTitoloOrdinazione.setText("Ordinazione di " + p.getNome() + " " + p.getCognome() + ", al tavolo " + c.getTavolo() + ".\nCosa vuole ordinare?");
         paneOrdinazione.setVisible(true);
         tfOrdinazione.setVisible(true);
         tfQuantita.setVisible(true);
