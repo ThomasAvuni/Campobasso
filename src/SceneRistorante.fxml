@@ -9,8 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RistoranteController">
+<AnchorPane fx:id="TopBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RistoranteController">
    <children>
+      <AnchorPane prefHeight="39.0" prefWidth="1024.0" />
       <Pane fx:id="paneClienti" layoutX="613.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
          <children>
             <VBox fx:id="listaClienti" layoutX="8.0" layoutY="43.0" prefHeight="300.0" prefWidth="364.0" />
@@ -59,14 +60,14 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Pane fx:id="panePortaPiatto" layoutX="29.0" layoutY="384.0" prefHeight="350.0" prefWidth="380.0" visible="false">
+      <Pane fx:id="panePortaPiatto" layoutX="29.0" layoutY="384.0" prefHeight="139.0" prefWidth="380.0" visible="false">
          <children>
             <Label layoutY="14.0" prefHeight="23.0" prefWidth="380.0" styleClass="titoli" text="Cameriere">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="lbPortaPiatto" alignment="CENTER" layoutX="7.0" layoutY="74.0" prefHeight="111.0" prefWidth="364.0" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="lbPortaPiatto" alignment="CENTER" layoutX="7.0" layoutY="42.0" prefHeight="86.0" prefWidth="364.0" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="24.0" />
                </font>

@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -23,11 +24,13 @@ public class MainController {
     @FXML private TextField tfNome;
     @FXML private VBox listaClienti;
     @FXML private Label lbOraSbagliata;
+    @FXML private AnchorPane TopBar;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
     private static RistoranteController RC;
+    private double x = 0, y = 0;
 
     public void Chiudi (MouseEvent event){
         Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();

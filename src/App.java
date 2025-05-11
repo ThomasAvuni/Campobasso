@@ -6,6 +6,8 @@ import javafx.stage.StageStyle;
 import javafx.fxml.FXMLLoader;
 
 public class App extends Application {
+
+public static Stage stage;
     public static void main(String[] args) throws Exception {
         launch(args);
     }
@@ -18,6 +20,9 @@ public class App extends Application {
         scene.setFill(Color.TRANSPARENT);
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
+
+        this.stage = stage;
+
         stage.setResizable(false);
         stage.show();
         Azienda a = new Azienda();
