@@ -20,12 +20,15 @@ public class RistoranteController {
     @FXML private Label lbOrdinazioneSbagliata;
     @FXML private Label lbPiattoPronto;
     @FXML private Pane panePiattoPronto;
+    @FXML private Button btnChiudi;
 
     private Cliente cliente;
+    private UpdateThread updateThread;
 
-    void close(MouseEvent event){
+    public void Chiudi (MouseEvent event){
         Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
         stage.close();
+        System.exit(0);
     }
 
     public void OrdinazioneSbagliata (String a) {
@@ -47,7 +50,7 @@ public class RistoranteController {
     }
 
     public void inizia(){
-        UpdateThread updateThread = new UpdateThread(this);
+        updateThread = new UpdateThread(this);
         updateThread.start();
         for(int i = 0; i < Azienda.clienti.size(); i++){
             Cliente c = Azienda.clienti.get(i);

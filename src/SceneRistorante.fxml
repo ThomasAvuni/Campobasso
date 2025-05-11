@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -50,5 +51,10 @@
             <Label fx:id="lbOrdinazioneSbagliata" alignment="CENTER" layoutY="201.0" prefHeight="46.0" prefWidth="380.0" text="Questo piatto non è nel menù" textAlignment="CENTER" visible="false" wrapText="true" />
          </children>
       </Pane>
+      <Button fx:id="btnChiudi" layoutX="424.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#Chiudi" prefHeight="33.0" prefWidth="176.0" text="Chiudi ristorante">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

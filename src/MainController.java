@@ -28,6 +28,10 @@ public class MainController {
     private Parent root;
     private static RistoranteController RC;
 
+    public void Chiudi (MouseEvent event){
+        Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
+        stage.close();
+    }
 
     private void aggingiCliente(Cliente c) {
         if (c != null) {

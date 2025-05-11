@@ -1,6 +1,7 @@
 .root{
-    -fx-background-color: "#2B292E";
+    -fx-background-color: linear-gradient(to top left,#201f22 , #252427  );
     -fx-font-family: "Georgia";
+    -fx-background-radius: 15;
 }
 
 .button{
@@ -29,21 +30,31 @@
 }
 
 #paneClienti{
-    -fx-background-color: #363438;
+    -fx-background-color: linear-gradient(to top left,  #29272b, #363538);
     -fx-background-radius: 15;
 }
 
 #panAggPrenotazione{
-    -fx-background-color: #363438;
+    -fx-background-color: linear-gradient(to top left,  #29272b, #363538);
     -fx-background-radius: 15;
 }
 
 #paneMenu{
-    -fx-background-color: #363438;
+    -fx-background-color: linear-gradient(to top left,  #29272b, #363538);
     -fx-background-radius: 15;
 }
 
 #paneOrdinazione{
-    -fx-background-color: #363438;
+    -fx-background-color: linear-gradient(to top left,  #29272b, #363538);
+    -fx-background-radius: 15;
+}
+
+#btnChiudi {
+    -fx-background-color: linear-gradient(to top left,#201f22 , #252427  );
+    -fx-background-radius: 15;
+}
+
+#btnChiudi:hover {
+    -fx-background-color: linear-gradient(to top left,  #ff1159, #d1094b);
     -fx-background-radius: 15;
 }
