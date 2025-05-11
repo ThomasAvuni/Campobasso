@@ -21,6 +21,8 @@ public class RistoranteController {
     @FXML private Label lbPiattoPronto;
     @FXML private Pane panePiattoPronto;
     @FXML private Button btnChiudi;
+    @FXML private Pane panePortaPiatto;
+    @FXML private Label lbPortaPiatto;
 
     private Cliente cliente;
     private UpdateThread updateThread;
@@ -38,6 +40,17 @@ public class RistoranteController {
 
     public void setTempo(String tempo) {
         timeLabel.setText(tempo);
+    }
+
+    public void portaPiatto(Piatto piatto) {
+        lbPortaPiatto.setText("Ho portato il piatto " + piatto.getNome() + " al " + piatto.getCliente().getTavolo() + ".");
+        panePortaPiatto.setVisible(true);
+        lbPortaPiatto.setVisible(true);
+    }
+
+    public void nascondiPortaPiatto() {
+        panePortaPiatto.setVisible(false);
+        lbPortaPiatto.setVisible(false);
     }
 
     public void setPannelloOrdinazione(Prenotazione p, Cliente c){
@@ -81,6 +94,7 @@ public class RistoranteController {
                 lbOrdinazioneSbagliata.setVisible(true);
                 return;
             }
+
             lbTitoloOrdinazione.setText("Grazie! Il piatto " + ordinazione + " è in preparazione e arrivererà a breve!");
             Sala.getCameriere().prendiOrdine(cliente, new Cibo(ordinazione, Integer.parseInt(tfQuantita.getText()), cliente));
             lbOrdinazioneSbagliata.setVisible(false);
@@ -93,7 +107,8 @@ public class RistoranteController {
                 try {
                     Thread.sleep(3000);
                     Azienda.tempo.setPausa(false);
-
+                    if(Azienda.gestionePrenotazioni.getPrimaPrenotazione() == null)
+                        Azienda.getChef().Cucina();
                     Platform.runLater(() -> paneOrdinazione.setVisible(false));
                 } catch (InterruptedException ex) {
 

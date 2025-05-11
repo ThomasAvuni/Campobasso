@@ -58,6 +58,11 @@
     -fx-background-radius: 15;
 }
 
+#panePortaPiatto{
+    -fx-background-color: linear-gradient(to top left,  #29272b, #363538);
+    -fx-background-radius: 15;
+}
+
 #btnChiudi {
     -fx-background-color: linear-gradient(to top left,#201f22 , #252427  );
     -fx-background-radius: 15;
@@ -66,4 +71,9 @@
 #btnChiudi:hover {
     -fx-background-color: linear-gradient(to top left,  #d40606, #d40e0e);
     -fx-background-radius: 15;
+}
+
+#lbPortaPiatto{
+    -fx-text-fill: #D8DEE9;
+    -fx-font-size: 24;
 }

@@ -43,7 +43,6 @@ public class ThreadTempo extends Thread{
                 continue;
             }
             else{
-                // System.out.print("In esecuzione\r");
             
             //Incremento i millisecondi
             ms++;
@@ -81,7 +80,7 @@ public class ThreadTempo extends Thread{
 
             //Fermare il thread 
             try {
-                Thread.sleep(5);
+                Thread.sleep(2);
             } catch (InterruptedException e) {
 
             }

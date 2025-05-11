@@ -38,7 +38,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="paneOrdinazione" layoutX="29.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
+      <Pane fx:id="paneOrdinazione" layoutX="29.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0" visible="false">
          <children>
             <Label fx:id="lbTitoloOrdinazione" prefHeight="86.0" prefWidth="380.0" styleClass="titoli" text="Cosa vuoi ordinare?" textAlignment="CENTER" wrapText="true">
                <font>
@@ -59,5 +59,19 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Pane fx:id="panePortaPiatto" layoutX="29.0" layoutY="384.0" prefHeight="350.0" prefWidth="380.0" visible="false">
+         <children>
+            <Label layoutY="14.0" prefHeight="23.0" prefWidth="380.0" styleClass="titoli" text="Cameriere">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbPortaPiatto" alignment="CENTER" layoutX="7.0" layoutY="74.0" prefHeight="111.0" prefWidth="364.0" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

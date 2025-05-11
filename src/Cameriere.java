@@ -1,5 +1,7 @@
 import java.util.Vector;
 
+import javafx.application.Platform;
+
 public class Cameriere extends Dipendente {
     Vector<Piatto> piattiPronti;
     private Tavolo tavolo; 
@@ -17,8 +19,6 @@ public class Cameriere extends Dipendente {
     public void prendiOrdine(Cliente cliente, Cibo cibo) {
         if(cibo != null){
             Azienda.getChef().AddCiboInCoda(cibo);
-            if(Azienda.gestionePrenotazioni.getPrimaPrenotazione() == null)
-                Azienda.getChef().Cucina();
         }
     }
 
@@ -41,7 +41,9 @@ public class Cameriere extends Dipendente {
                     Piatto piatto = piattiPronti.elementAt(i);
                     try {
                         Thread.sleep(piatto.getTempoDiPreparazione() * 1000);
-                        System.out.println("Il piatto " + piatto.getNome() + " " + piatto.getCliente().getTavolo());
+                        Platform.runLater(() -> MainController.getRC().portaPiatto(piatto));
+                        Thread.sleep(3500);
+                        Platform.runLater(() -> MainController.getRC().nascondiPortaPiatto());
                     } catch (InterruptedException e) {
                     }
                 }

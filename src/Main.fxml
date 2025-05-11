@@ -42,7 +42,7 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="btnChiudi" layoutX="424.0" layoutY="368.0" mnemonicParsing="false" onMouseClicked="#Chiudi" prefHeight="33.0" prefWidth="176.0" text="Chiudi ristorante">
+      <Button fx:id="btnChiudi" layoutX="424.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#Chiudi" prefHeight="33.0" prefWidth="176.0" text="Chiudi ristorante">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
