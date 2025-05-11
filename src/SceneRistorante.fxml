@@ -38,14 +38,17 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="paneOrdinazione" layoutX="29.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0" visible="false">
+      <Pane fx:id="paneOrdinazione" layoutX="29.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
          <children>
             <Label fx:id="lbTitoloOrdinazione" prefHeight="86.0" prefWidth="380.0" styleClass="titoli" text="Cosa vuoi ordinare?" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btnOrdina" layoutX="102.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#ordina" prefHeight="33.0" prefWidth="176.0" text="Ordina" />
+            <Button fx:id="btnOrdina" layoutX="102.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#ordina" prefHeight="33.0" prefWidth="176.0" text="Ordina">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <TextField fx:id="tfOrdinazione" layoutX="100.0" layoutY="107.0" prefWidth="180.0" promptText="Scegli dal menu!" />
             <TextField fx:id="tfQuantita" layoutX="100.0" layoutY="163.0" prefWidth="180.0" promptText="Insiresci la quantità" />
             <Label fx:id="lbOrdinazioneSbagliata" alignment="CENTER" layoutY="201.0" prefHeight="46.0" prefWidth="380.0" text="Questo piatto non è nel menù" textAlignment="CENTER" visible="false" wrapText="true" />

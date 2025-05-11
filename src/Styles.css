@@ -5,12 +5,21 @@
 }
 
 .button{
-    -fx-background-color: #403E42;
+    -fx-background-color: linear-gradient(to top left,  #29272b, #363538);;
     -fx-text-fill: #D8DEE9;
     -fx-font-size: 16;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
 }
+
+.button:hover{
+    -fx-background-color: linear-gradient(to top left,  #296af7, rgb(21, 139, 197));;
+    -fx-text-fill: #D8DEE9;
+    -fx-font-size: 16;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
 
 .label{
     -fx-text-fill: #D8DEE9;
@@ -55,6 +64,6 @@
 }
 
 #btnChiudi:hover {
-    -fx-background-color: linear-gradient(to top left,  #ff1159, #d1094b);
+    -fx-background-color: linear-gradient(to top left,  #d40606, #d40e0e);
     -fx-background-radius: 15;
 }
