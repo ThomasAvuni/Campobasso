@@ -4,7 +4,6 @@ import javafx.application.Platform;
 
 public class Cameriere extends Dipendente {
     Vector<Piatto> piattiPronti;
-    private Tavolo tavolo; 
     public Cameriere(String nome, String cognome, Data dataNascita) {
         super(nome, cognome, dataNascita);
         piattiPronti = new Vector<Piatto>();
