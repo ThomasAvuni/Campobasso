@@ -16,6 +16,8 @@ public class Azienda {
         aiutoCuoco = new AiutoCuoco("Francesco", "Marzano", new Data(1990, 5, 20));
         clienti = new Vector<Cliente>();
         tempo = new ThreadTempo();
+        direttore.aggiungiDipendente(aiutoCuoco);
+        direttore.aggiungiDipendente(chef);
     
         sala = new Sala();
         sala.RiempiSala();

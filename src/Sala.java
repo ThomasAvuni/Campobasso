@@ -15,6 +15,7 @@ public class Sala {
             System.out.println("Tavolo " + (i + 1) + " con " + tavoli.elementAt(i).getPosti() + " posti");
         }
         cameriere = new Cameriere("Sofia", "Scalia", new Data(1992, 12, 3));
+        Azienda.getDirettore().aggiungiDipendente(cameriere);
     }
 
     public Vector<Tavolo> getTavoli(){
