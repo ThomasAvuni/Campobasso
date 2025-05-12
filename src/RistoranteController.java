@@ -1,13 +1,16 @@
 import javafx.application.Platform;
+import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class RistoranteController {
     @FXML private Label timeLabel;
@@ -25,6 +28,7 @@ public class RistoranteController {
     @FXML private Pane panePortaPiatto;
     @FXML private Label lbPortaPiatto;
     @FXML private AnchorPane TopBar;
+
 
     private Cliente cliente;
     private UpdateThread updateThread;
@@ -51,14 +55,23 @@ public class RistoranteController {
     }
 
     public void portaPiatto(Piatto piatto) {
+        
         lbPortaPiatto.setText("Ho portato il piatto " + piatto.getNome() + " al " + piatto.getCliente().getTavolo() + ".");
         panePortaPiatto.setVisible(true);
         lbPortaPiatto.setVisible(true);
+
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(2),panePortaPiatto);
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0);
+        
+        fadeIn.play();
     }
 
     public void nascondiPortaPiatto() {
-        panePortaPiatto.setVisible(false);
-        lbPortaPiatto.setVisible(false);
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(2),panePortaPiatto);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
+        fadeOut.play();
     }
 
     public void setPannelloOrdinazione(Prenotazione p, Cliente c){
