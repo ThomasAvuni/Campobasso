@@ -46,6 +46,7 @@ public class Cameriere extends Dipendente {
                     } catch (InterruptedException e) {
                     }
                 }
+                Azienda.getDirettore().pagaStipendi();
                 Platform.runLater(() -> MainController.getRC().mostraPaneChiusura());
             }
         }.start();
