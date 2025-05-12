@@ -11,7 +11,6 @@
 
 <AnchorPane fx:id="TopBar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RistoranteController">
    <children>
-      <AnchorPane prefHeight="39.0" prefWidth="1024.0" />
       <Pane fx:id="paneClienti" layoutX="613.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
          <children>
             <VBox fx:id="listaClienti" layoutX="8.0" layoutY="43.0" prefHeight="300.0" prefWidth="364.0" />
@@ -73,6 +72,11 @@
                </font>
             </Label>
          </children>
+      </Pane>
+      <Pane fx:id="TopBar" layoutY="-2.0" prefHeight="19.0" prefWidth="1024.0">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
       </Pane>
    </children>
 </AnchorPane>

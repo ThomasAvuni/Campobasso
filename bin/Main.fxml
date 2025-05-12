@@ -47,5 +47,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Pane fx:id="TopBar" prefHeight="23.0" prefWidth="1024.0">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Pane>
    </children>
 </AnchorPane>
