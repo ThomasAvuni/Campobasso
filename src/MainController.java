@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -24,13 +23,25 @@ public class MainController {
     @FXML private TextField tfNome;
     @FXML private VBox listaClienti;
     @FXML private Label lbOraSbagliata;
-    @FXML private AnchorPane TopBar;
+    @FXML private Pane TopBar;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
     private static RistoranteController RC;
     private double x = 0, y = 0;
+
+    public void init(Stage stage){
+        TopBar.setOnMousePressed(event -> {
+            x = event.getSceneX();
+            y = event.getSceneY();
+        });
+
+        TopBar.setOnMouseDragged(event -> {
+            stage.setX(event.getScreenX() - x);
+            stage.setY(event.getScreenY() - y);
+        });
+    }
 
     public void Chiudi (MouseEvent event){
         Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
@@ -48,15 +59,16 @@ public class MainController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("SceneRistorante.fxml"));
         root = loader.load();
         Azienda.tempo.start();
-
+        
         RC = loader.getController();
         RC.inizia();
-
+        
         stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
         stage.setTitle("Ristorante");
+        ((RistoranteController)loader.getController()).init(stage);
         stage.show();
     }
 

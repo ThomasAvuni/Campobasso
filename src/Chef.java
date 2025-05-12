@@ -3,7 +3,6 @@ import java.util.Vector;
 
 public class Chef extends Dipendente{
     Vector<Cibo> cibiDaPreparare;
-    private Ora oraUltimaPrenotazione;
     private int ordini = 0;
 
     public Chef(String nome, String cognome, Data dataNascita) {
@@ -41,14 +40,6 @@ public class Chef extends Dipendente{
             System.out.println("Non ci sono cibi da preparare");
             Sala.getCameriere().portaPiatti();
         }
-    }
-
-    public void setOraUltimaPrenotazione(Ora oraUltimaPrenotazione) {
-        this.oraUltimaPrenotazione = oraUltimaPrenotazione;
-    }
-
-    public Ora getOraUltimaPrenotazione() {
-        return oraUltimaPrenotazione;
     }
 
     public void AddCiboInCoda(Cibo cibo) {

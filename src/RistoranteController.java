@@ -5,8 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -27,11 +25,24 @@ public class RistoranteController {
     @FXML private Button btnChiudi;
     @FXML private Pane panePortaPiatto;
     @FXML private Label lbPortaPiatto;
-    @FXML private AnchorPane TopBar;
+    @FXML private Pane TopBar;
 
 
     private Cliente cliente;
     private UpdateThread updateThread;
+    private double x = 0, y = 0;
+
+    public void init(Stage stage){
+        TopBar.setOnMousePressed(event -> {
+            x = event.getSceneX();
+            y = event.getSceneY();
+        });
+
+        TopBar.setOnMouseDragged(event -> {
+            stage.setX(event.getScreenX() - x);
+            stage.setY(event.getScreenY() - y);
+        });
+    }
 
     public void Chiudi (MouseEvent event){
         Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
