@@ -78,5 +78,10 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Pane>
+      <Pane fx:id="paneChiusura" layoutX="412.0" layoutY="238.0" prefHeight="123.0" prefWidth="200.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutY="3.0" prefHeight="117.0" prefWidth="200.0" text="Tutti i piatti sono stati portati. Il servizio è finito." textAlignment="CENTER" wrapText="true" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

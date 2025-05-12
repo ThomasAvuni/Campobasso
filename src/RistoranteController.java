@@ -26,7 +26,7 @@ public class RistoranteController {
     @FXML private Pane panePortaPiatto;
     @FXML private Label lbPortaPiatto;
     @FXML private Pane TopBar;
-
+    @FXML private Pane paneChiusura;
 
     private Cliente cliente;
     private UpdateThread updateThread;
@@ -59,10 +59,8 @@ public class RistoranteController {
         timeLabel.setText(tempo);
     }
 
-    public void setLBPortaPiatto(String piatto) {
-        lbPortaPiatto.setText(piatto);
-        panePortaPiatto.setVisible(true);
-        lbPortaPiatto.setVisible(true);
+    public void mostraPaneChiusura() {
+        paneChiusura.setVisible(true);
     }
 
     public void portaPiatto(Piatto piatto) {

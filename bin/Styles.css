@@ -77,3 +77,8 @@
     -fx-text-fill: #D8DEE9;
     -fx-font-size: 18;
 }
+
+#paneChiusura{
+    -fx-background-color: linear-gradient(to top left,  #29272b, #363538);
+    -fx-background-radius: 15;
+}
