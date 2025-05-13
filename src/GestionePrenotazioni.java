@@ -24,6 +24,17 @@ public class GestionePrenotazioni {
         return h.getDati();
     }
 
+    public boolean controllaPrenDoppia(Prenotazione p){
+        Node h = head;
+        while(h != null){
+            Prenotazione p1 = h.getDati();
+            if(p1.getOraAppuntamento().isEqual(p.getOraAppuntamento()))
+                return true;
+            h = h.getLink();
+        }
+        return false;
+    }
+
     private void inserisciInTesta(Prenotazione p){
         Node n = new Node(p);
         n.setLink(head);

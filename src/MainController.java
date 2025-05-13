@@ -79,6 +79,12 @@ public class MainController {
         if(!nome.isEmpty() && !cognome.isEmpty() && !data[0].isEmpty() && !data[1].isEmpty()){
             Cliente c = new Cliente(nome, cognome, new Ora(Integer.parseInt(data[0]), Integer.parseInt(data[1])));
             if(c.getPrenotazione() == null){
+                lbOraSbagliata.setText("L'ora della prenotazione non è valida! L'orario d'apertura è 19:00.");
+                lbOraSbagliata.setVisible(true);
+                return;
+            }
+            if(Azienda.gestionePrenotazioni.controllaPrenDoppia(c.getPrenotazione())){
+                lbOraSbagliata.setText("Quest'orario è già occupato.");
                 lbOraSbagliata.setVisible(true);
                 return;
             }

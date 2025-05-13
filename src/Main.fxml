@@ -29,7 +29,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Label fx:id="lbOraSbagliata" alignment="CENTER" layoutX="89.0" layoutY="169.0" prefHeight="77.0" prefWidth="199.0" text="L'ora della prenotazione non è valida! L'orario d'apertura è 19:00" textAlignment="CENTER" visible="false" wrapText="true" />
+            <Label fx:id="lbOraSbagliata" alignment="CENTER" layoutX="89.0" layoutY="169.0" prefHeight="77.0" prefWidth="199.0" text="" textAlignment="CENTER" visible="false" wrapText="true" />
          </children>
       </Pane>
       <Pane fx:id="paneClienti" layoutX="613.0" layoutY="21.0" prefHeight="350.0" prefWidth="380.0">
