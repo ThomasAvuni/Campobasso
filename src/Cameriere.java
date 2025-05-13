@@ -41,13 +41,21 @@ public class Cameriere extends Dipendente {
                     try {
                         Thread.sleep(piatto.getTempoDiPreparazione() * 1000);
                         Platform.runLater(() -> MainController.getRC().portaPiatto(piatto));
+                        Azienda.getAiutoCuoco().piattiDaLavare.add(piatto);
                         Thread.sleep(3500);
                         Platform.runLater(() -> MainController.getRC().nascondiPortaPiatto());
                     } catch (InterruptedException e) {
                     }
                 }
-                Azienda.getDirettore().pagaStipendi();
-                Platform.runLater(() -> MainController.getRC().mostraPaneChiusura());
+                try{
+                    Thread.sleep(2000);
+                    Sala.terminaServizio();
+                    Platform.runLater(() -> MainController.getRC().mostraPaneChiusura());
+                    Azienda.getAiutoCuoco().lavaPiatti();
+                }
+                catch(InterruptedException e){
+
+                }
             }
         }.start();
     }

@@ -83,5 +83,17 @@
             <Label alignment="CENTER" layoutY="3.0" prefHeight="117.0" prefWidth="200.0" text="Tutti i piatti sono stati portati. Il servizio è finito." textAlignment="CENTER" wrapText="true" />
          </children>
       </Pane>
+
+      <Pane fx:id="paneStipendi" layoutX="29.0" layoutY="384.0" prefHeight="200.0" prefWidth="400.0" visible="false">
+         <children>
+            <VBox fx:id="listaStipendi" layoutX="8.0" layoutY="43.0" prefHeight="300.0" prefWidth="364.0" />
+            <Label layoutY="14.0" prefHeight="23.0" prefWidth="380.0" styleClass="titoli" text="Stipendi">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+
    </children>
 </AnchorPane>

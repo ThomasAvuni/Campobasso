@@ -27,6 +27,8 @@ public class RistoranteController {
     @FXML private Label lbPortaPiatto;
     @FXML private Pane TopBar;
     @FXML private Pane paneChiusura;
+    @FXML private Pane paneStipendi;
+    @FXML private VBox listaStipendi;
 
     private Cliente cliente;
     private UpdateThread updateThread;
@@ -42,6 +44,17 @@ public class RistoranteController {
             stage.setX(event.getScreenX() - x);
             stage.setY(event.getScreenY() - y);
         });
+    }
+
+    public void mostraStipendi(String s){
+        Label label = new Label(s);
+        listaStipendi.getChildren().add(label);
+        paneStipendi.setVisible(true);
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(1.5),paneStipendi);
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0); 
+        
+        fadeIn.play();
     }
 
     public void Chiudi (MouseEvent event){
@@ -61,6 +74,11 @@ public class RistoranteController {
 
     public void mostraPaneChiusura() {
         paneChiusura.setVisible(true);
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.8),paneChiusura);
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0); 
+        
+        fadeIn.play();
     }
 
     public void portaPiatto(Piatto piatto) {
@@ -69,15 +87,15 @@ public class RistoranteController {
         panePortaPiatto.setVisible(true);
         lbPortaPiatto.setVisible(true);
 
-        FadeTransition fadeIn = new FadeTransition(Duration.seconds(2),panePortaPiatto);
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.8),panePortaPiatto);
         fadeIn.setFromValue(0.0);
-        fadeIn.setToValue(1.0);
+        fadeIn.setToValue(1.0); 
         
         fadeIn.play();
     }
 
     public void nascondiPortaPiatto() {
-        FadeTransition fadeOut = new FadeTransition(Duration.seconds(2),panePortaPiatto);
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.8),panePortaPiatto);
         fadeOut.setFromValue(1.0);
         fadeOut.setToValue(0.0);
         fadeOut.play();

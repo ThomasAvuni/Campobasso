@@ -1,5 +1,7 @@
 import java.util.Vector;
 
+import javafx.application.Platform;
+
 public class Direttore{
     private String nome;
     private String cognome;
@@ -27,7 +29,9 @@ public class Direttore{
     public void pagaStipendi(){
         for(int i = 0; i < dipendenti.size(); i++){
             dipendenti.elementAt(i).calcolaStipendio();
-            System.out.println("Stipendio di " + dipendenti.elementAt(i).getNome() + " " + dipendenti.elementAt(i).getCognome() + ": " + dipendenti.elementAt(i).getStipendio() + " euro");
+            String s = "Stipendio di " + dipendenti.elementAt(i).getNome() + " " + dipendenti.elementAt(i).getCognome() + ": " + dipendenti.elementAt(i).getStipendio() + " euro";
+            Platform.runLater(() -> MainController.getRC().mostraStipendi(s));
+            System.out.println(s);
         }
     }
 
