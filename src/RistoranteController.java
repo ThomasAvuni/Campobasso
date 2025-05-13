@@ -50,7 +50,7 @@ public class RistoranteController {
         Label label = new Label(s);
         listaStipendi.getChildren().add(label);
         paneStipendi.setVisible(true);
-        FadeTransition fadeIn = new FadeTransition(Duration.seconds(1.5),paneStipendi);
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5),paneStipendi);
         fadeIn.setFromValue(0.0);
         fadeIn.setToValue(1.0); 
         
@@ -74,7 +74,7 @@ public class RistoranteController {
 
     public void mostraPaneChiusura() {
         paneChiusura.setVisible(true);
-        FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.8),paneChiusura);
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5),paneChiusura);
         fadeIn.setFromValue(0.0);
         fadeIn.setToValue(1.0); 
         
@@ -87,7 +87,7 @@ public class RistoranteController {
         panePortaPiatto.setVisible(true);
         lbPortaPiatto.setVisible(true);
 
-        FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.8),panePortaPiatto);
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5),panePortaPiatto);
         fadeIn.setFromValue(0.0);
         fadeIn.setToValue(1.0); 
         
@@ -95,7 +95,7 @@ public class RistoranteController {
     }
 
     public void nascondiPortaPiatto() {
-        FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.8),panePortaPiatto);
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5),panePortaPiatto);
         fadeOut.setFromValue(1.0);
         fadeOut.setToValue(0.0);
         fadeOut.play();
