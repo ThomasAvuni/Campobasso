@@ -52,8 +52,6 @@ public class Cameriere extends Dipendente {
                         Thread.sleep(piatto.getTempoDiPreparazione() * 1000);
                         //Mostro l'interfaccia grafica per la consegna del piatto
                         Platform.runLater(() -> MainController.getRC().portaPiatto(piatto));
-                        //Aggiungo il piatto alla lista di piatti da lavare
-                        Azienda.getAiutoCuoco().piattiDaLavare.add(piatto);
                         Thread.sleep(3500);
                         //Dopo 3 secondi nascondo il piatto
                         Platform.runLater(() -> MainController.getRC().nascondiPortaPiatto());
@@ -61,12 +59,18 @@ public class Cameriere extends Dipendente {
                     }
                 }
                 try{
+                    Thread.sleep(1500);
+                    Azienda.getAiutoCuoco().lavaPiatti();
+                    Thread.sleep(1500);
+                    Platform.runLater(() -> MainController.getRC().chiudiPaneLavapiatti());
+                    Thread.sleep(1500);
+                    Platform.runLater(() -> MainController.getRC().mostraPaneLavapiatti("Ho lavato tutti i piatti."));
+                    Thread.sleep(1500);
+                    Platform.runLater(() -> MainController.getRC().chiudiPaneLavapiatti());
                     //Quando ho finito di portare i piatti, aspetto 2 secondi e poi chiudo il servizio
                     Thread.sleep(2000);
                     Sala.terminaServizio();
                     Platform.runLater(() -> MainController.getRC().mostraPaneChiusura());
-                    //Chiamo la funzione per lavare i piatti
-                    Azienda.getAiutoCuoco().lavaPiatti();
                 }
                 catch(InterruptedException e){
 

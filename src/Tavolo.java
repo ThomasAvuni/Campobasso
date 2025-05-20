@@ -1,14 +1,17 @@
 public class Tavolo {
+    //Attributi
     private int numero;
     private int posti;
     private boolean occupato;
 
+    //Costruttore
     public Tavolo(int numero, int posti){
         this.numero = numero;
         this.posti = posti;
         occupato = false;
     }
 
+    //Getter e setter
     public int getNumero(){
         return this.numero;
     } 

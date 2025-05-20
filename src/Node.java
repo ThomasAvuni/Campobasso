@@ -1,11 +1,15 @@
 public class Node {
+    //Attributi
     private Prenotazione Dati;
     private Node Link;
 
+    //Costruttore
     public Node(Prenotazione dati){
         Dati = dati;
         Link = null;
     }
+
+    //getter e setter
     public Prenotazione getDati (){
         return Dati;
     }

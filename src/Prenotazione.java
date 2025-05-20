@@ -5,7 +5,7 @@ public class Prenotazione {
     Cliente cliente;
     
 
-    //Costruttore
+    //Costruttore privato
     private Prenotazione(Ora data, String nome, String cognome){
         this.oraAppuntamento = data;
         this.nome = nome;
@@ -13,6 +13,7 @@ public class Prenotazione {
         this.oraAppuntamento = data;
     }
 
+    //Metodo statico per creare una prenotazione che controlla se l'ora è valida
     public static Prenotazione creaPrenotazione(Ora ora, String nome, String cognome){
         if(ora.isBefore(ThreadTempo.ORARIO_APERTURA)){
             System.out.println("La prenotazione di " + nome + " " + cognome + " non e' valida!");
@@ -39,6 +40,7 @@ public class Prenotazione {
         return cliente;
     }
 
+    //Metodo che controlla se due prenotazioni sono uguali
     public boolean isEqual(Prenotazione p){
         if(this.getNome().equals(p.getNome()) && this.getCognome().equals(p.getCognome()) && this.getOraAppuntamento().equals(p.getOraAppuntamento())){
             return true;

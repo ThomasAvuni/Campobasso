@@ -1,21 +1,25 @@
 public class Piatto {
+    //Attributi
     private String nome;
     private String lavato;
     private int quantita;
     private Cliente cliente;
     private boolean pronto;
 
+    //Costruttore
     public Piatto(String nome){
         setNome(nome);
         pronto = false;
     }
 
+    //Costruttore con cliente
     public Piatto(String nome, Cliente cliente){
         setNome(nome);
         pronto = false;
         this.cliente = cliente;
     }
 
+    //Getter e setter
     public void setNome (String nome){
         this.nome = nome;
     }    
@@ -28,6 +32,7 @@ public class Piatto {
         return nome;
     }
 
+    //Funzione che restituisce il tempo di preparazione del piatto
     public int getTempoDiPreparazione() {
         if(nome.equalsIgnoreCase("pasta e zucchine") || nome.equalsIgnoreCase("pasta al pomodoro")){
             return 7;

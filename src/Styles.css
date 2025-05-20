@@ -87,3 +87,8 @@
     -fx-background-color: linear-gradient(to top left,  #29272b, #363538);
     -fx-background-radius: 15;
 }
+
+#paneLavapiatti{
+    -fx-background-color: linear-gradient(to top left,  #29272b, #363538);
+    -fx-background-radius: 15;
+}

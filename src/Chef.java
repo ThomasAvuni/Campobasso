@@ -62,6 +62,9 @@ public class Chef extends Dipendente{
                 cibiDaPreparare.addElement(ciboDaAggiungere);
                 //Aumento il numero di ordini
                 ordini++;
+                //Aumento anche il numero di piatti da lavare per dopo
+                Azienda.getAiutoCuoco().piattiDaLavare++;
+
             }
             return;
         }
