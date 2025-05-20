@@ -23,7 +23,6 @@ public class UpdateThread extends Thread{
                             controller.setPannelloOrdinazione(Azienda.gestionePrenotazioni.getPrimaPrenotazione(), Azienda.gestionePrenotazioni.getPrimaPrenotazione().getCliente());
                             Azienda.gestionePrenotazioni.elimina(Azienda.gestionePrenotazioni.getPrimaPrenotazione());
                         }
-                        
                     }
                 });
             } catch (InterruptedException e) {

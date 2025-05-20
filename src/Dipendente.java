@@ -1,15 +1,18 @@
 public class Dipendente {
+    //Attributi
     private String nome, cognome;
     protected String ruolo;
     private Data dataNascita;
     private int stipendio;
 
+    //Costruttore
     public Dipendente(String nome, String cognome, Data dataNascita) {
         this.nome = nome;
         this.cognome = cognome;
         this.dataNascita = dataNascita;
     }
 
+    //Getter
     public String getNome() {
         return nome;
     }

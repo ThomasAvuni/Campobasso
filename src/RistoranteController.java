@@ -29,6 +29,8 @@ public class RistoranteController {
     @FXML private Pane paneChiusura;
     @FXML private Pane paneStipendi;
     @FXML private VBox listaStipendi;
+    @FXML private Pane paneLavapiatti;
+    @FXML private Label lbLavapiatti;
 
     private Cliente cliente;
     private UpdateThread updateThread;
@@ -108,6 +110,23 @@ public class RistoranteController {
         tfOrdinazione.setVisible(true);
         tfQuantita.setVisible(true);
         btnOrdina.setVisible(true);
+    }
+
+    public void mostraPaneLavapiatti(String s) {
+        lbLavapiatti.setText(s);
+        paneLavapiatti.setVisible(true);
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5),paneLavapiatti);
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0); 
+        
+        fadeIn.play();
+    }
+
+    public void chiudiPaneLavapiatti() {
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5),paneLavapiatti);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
+        fadeOut.play();
     }
 
     public void inizia(){

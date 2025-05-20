@@ -3,14 +3,6 @@ public class Data {
     private int giorno, mese, anno;
     private Ora orario;
 
-    //Costruttore di copia
-    public Data(Data d){
-        giorno = d.getGiorno();
-        mese = d.getMese();
-        anno = d.getAnno();
-        orario = d.getOrario();
-    }
-
     //Costruttore con tutti gli attributi
     public Data(int g, int m, int a, Ora ora){
         giorno = g;
